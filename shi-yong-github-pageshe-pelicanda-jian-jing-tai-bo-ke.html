@@ -39,22 +39,30 @@
 </footer><!-- /.post-info -->      <p>Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了, 因为对Ruby实在是一无所知, 在安装过程中遇到各种Bug只能疯狂google, 照搬别人的解决方案. 另外在我安装自定义主题的时候有很多不满意的地方都不太清楚怎么修改. 如果用了别人的东西写博客却连原理是什么都不知道, 就有点怂了.</p>
 <p>好歹还是知道点Python的, 不如干脆换一个基于Python的生成器, 一番调研最后决定用Pelican了(其实就是随便挑了一个吧喂= =)</p>
 <p>为了体现一个计算机渣硕的专业技能, 决定不看网上各种教程, 自己对照官方文档安装(‘▽′)/  </p>
-<h1>安装Pelican(Windows 7)</h1>
-<p>需要用的的软件包括<code>python</code> <code>pip</code> </p>
-<h2>安装<code>python</code> <code>pip</code></h2>
+<h1>安装Pelican及相关软件(Windows 7)</h1>
+<p>为了完成目标我们需要用到一些依赖软件, 比如<code>python</code> <code>pip</code> <code>git</code> 等, 简单说下.</p>
+<h2>安装<code>python</code> <code>pip</code> <code>git</code></h2>
 <ol>
 <li>我用的python版本是2.7.8, 在<a href="https://www.python.org/downloads/">python官网</a>下载安装即可.</li>
-<li>
-<p>安装<code>pip</code>, 参考<a href="https://pip.pypa.io/en/latest/installing.html">pip quickstart</a>, windows用户需要注意在PATH系统变量中添加python安装路径下的scripts文件夹.</p>
-<blockquote>
-<p>To enable the use of pip from the command line, ensure the Scripts subdirectory of your Python installation is available on the system PATH. (This is not done automatically.)</p>
-</blockquote>
-</li>
-<li>
-<p>安装Pelican
-在cmd窗口中执行<code>pip install pelican markdown</code>, 自动安装一堆之后显示"Successfully installed pelican markdown jinja2...". 注意可能由于网络问题超时失败, 重新执行命令即可.</p>
-</li>
+<li>安装<code>pip</code>, 参考<a href="https://pip.pypa.io/en/latest/installing.html">pip quickstart</a>, windows用户需要注意在PATH系统变量中添加python安装路径下的scripts文件夹.</li>
+<li>安装<code>git</code>, 直接官网下载最新版安装</li>
 </ol>
+<h2>安装及初始化Pelican</h2>
+<p>参照Pelican文档中<a href="http://docs.getpelican.com/en/3.5.0/quickstart.html">quickstart</a>这一章可以快速完成Pelican的安装和初始化.</p>
+<h3>安装Pelican</h3>
+<p>在cmd窗口中执行<code>pip install pelican markdown</code>, 自动安装一堆之后显示"Successfully installed pelican markdown jinja2...". 注意可能由于网络问题超时失败, 重新执行命令即可.</p>
+<h3>新建一个Pelican目录</h3>
+<p>在你想要存放本地Pelican文件夹的地方新建文件夹(比如<code>Pelican</code>), 运行<code>cmd</code>进入该目录. 执行
+        pelican-quickstart
+回答一系列问题(除了基本信息以外其他都可以直接回车用默认设置, 后面还可以改). 这样就在<code>Pelican</code>目录中建立了基本的Pelican文件框架.</p>
+<h3>写第一个Blog页面</h3>
+<p>用任意文本编辑器新建一个文本文件, 内容为(举例):
+```Title: My First Review
+Date: 2010-12-03 10:20
+Category: Review</p>
+<p>Following is a review of my favorite mechanical keyboard.<code>保存在`Pelican/content/keyboard-review.md`
+接下来在项目根目录下(`Pelican`目录)执行</code>pelican content```
+就成功建立了第一篇博文.</p>
     </div><!-- /.entry-content -->
 
   </article>
