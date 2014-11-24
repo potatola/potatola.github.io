@@ -190,19 +190,14 @@ git push origin <span class="nb">source</span>
 </ol>
 <h2>自动部署修改</h2>
 <p>我们希望博客内容改动后能用一个脚本自动把改动内容上传到Git上, 避免输入上面几条很长的git命令, 可以用以下脚本实现:</p>
+<p>上传网站</p>
 <div class="highlight"><pre>pelican content -s pelicanconf.py
 ghp-import output
 git push git@github.com:<span class="o">{</span>yourname<span class="o">}</span>/<span class="o">{</span>yourname<span class="o">}</span>.github.io.git gh-pages:master
 </pre></div>
 
 
-<p>怎么回事?</p>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
-    <span class="k">print</span> <span class="s">&quot;Hello, World!&quot;</span>
-</pre></div>
-
-
-<p>怎么回事?</p>
+<p>同步源代码</p>
 <div class="highlight"><pre><span class="k">if</span> <span class="nv">$# </span><span class="o">==</span> 0:
     <span class="nb">echo</span> <span class="s2">&quot;don&#39;t forget the commit description&quot;</span>
     <span class="nb">exit </span>0
