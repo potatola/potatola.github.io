@@ -141,14 +141,14 @@ Deadline's Coming            </a>
 Content from the master branch will be used to build and publish your GitHub Pages site.</p>
 </blockquote>
 <h2>发布网页</h2>
-<p>打开<code>git bash</code>命令行窗口, 切换到Pelican根目录, 执行以下命里初始化Git Repo</p>
+<p>1.打开<code>git bash</code>命令行窗口, 切换到Pelican根目录, 执行以下命里初始化Git Repo</p>
 <div class="highlight"><pre>git init
 git commit -m <span class="s1">&#39;init&#39;</span>
 git remote add origin git@github.com:<span class="o">{</span>username<span class="o">}</span>/<span class="o">{</span>username<span class="o">}</span>.github.io.git
 </pre></div>
 
 
-<p>利用<code>ghp-import</code>工具发布网页</p>
+<p>1.利用<code>ghp-import</code>工具发布网页</p>
 <div class="highlight"><pre>git branch gh-pages <span class="c">#只有第一次需要执行</span>
 ghp-import output
 git push git@github.com:<span class="o">{</span>username<span class="o">}</span>/<span class="o">{</span>username<span class="o">}</span>.github.io.git gh-pages:master
