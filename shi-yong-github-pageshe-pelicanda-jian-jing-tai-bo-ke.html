@@ -161,7 +161,7 @@ git remote add origin git@github.com:{username}/{username}.github.io.git
 <p>这样就可以通过访问 <code>{username}.github.io</code> 访问博客网页了.</p>
 <h2>存档项目到git</h2>
 <p>为了能够在不同电脑上同步自己的Pelican, 我们顺便把整个Pelican目录同步到这个Repository里面, 只要新建一个分支就好了, 在Pelican根目录下执行</p>
-<p>:::shell
+<p>:::sh
 git checkout -b source
 git add .
 git commit -m 'first commit'
@@ -177,11 +177,11 @@ git push origin source</p>
 </ol>
 <h2>自动部署修改</h2>
 <p>我们希望博客内容改动后能用一个脚本自动把改动内容上传到Git上, 避免输入上面几条很长的git命令, 可以用以下脚本实现:</p>
-<p>:::shell
+<p>:::sh
 pelican content -s pelicanconf.py
 ghp-import output
 git push git@github.com:{yourname}/{yourname}.github.io.git gh-pages:master</p>
-<p>:::shell
+<p>:::sh
 if $# == 0:
     echo "don't forget the commit description"
     exit 0
