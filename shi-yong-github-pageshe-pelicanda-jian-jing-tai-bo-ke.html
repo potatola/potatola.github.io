@@ -128,7 +128,10 @@ Deadline's Coming            </a>
 
 <p>保存在<code>Pelican/content/keyboard-review.md</code>
 接下来在项目根目录下(<code>Pelican</code>目录)执行</p>
-<p><code>pelican content</code></p>
+<div class="highlight"><pre>    pelican content
+</pre></div>
+
+
 <p>就成功建立了第一篇博文.</p>
 <h1>发布网页到Github Pages</h1>
 <h2>新建Repository</h2>
@@ -167,11 +170,23 @@ git push origin <span class="nb">source</span>
 <h1>进阶功能</h1>
 <h2>安装主题</h2>
 <ol>
-<li>网上搜索到喜欢的Pelican主题之后(比如我使用的<a href="https://github.com/DandyDev/pelican-bootstrap3">bootstrap3</a>, 把主题下载到某个目录.
-        git clone https://github.com/DandyDev/pelican-bootstrap3.git /path/to/bs3</li>
-<li>安装主题到Pelican中
-        pelican-themes --install /path/to/bs3</li>
-<li>指定Pelican使用该主题(这里要注意上一步安装完并不代表会使用这个主题), 即修改配置文件<code>pelicanconf.py</code>中的<code>THEME</code>字段(或新建该字段)指向要使用的主题<code>/path/to/bs3</code></li>
+<li>
+<p>网上搜索到喜欢的Pelican主题之后(比如我使用的<a href="https://github.com/DandyDev/pelican-bootstrap3">bootstrap3</a>, 把主题下载到某个目录.</p>
+<div class="highlight"><pre>git clone https://github.com/DandyDev/pelican-bootstrap3.git /path/to/bs3
+</pre></div>
+
+
+</li>
+<li>
+<p>安装主题到Pelican中</p>
+<div class="highlight"><pre>pelican-themes --install /path/to/bs3
+</pre></div>
+
+
+</li>
+<li>
+<p>指定Pelican使用该主题(这里要注意上一步安装完并不代表会使用这个主题), 即修改配置文件<code>pelicanconf.py</code>中的<code>THEME</code>字段(或新建该字段)指向要使用的主题<code>/path/to/bs3</code></p>
+</li>
 </ol>
 <h2>自动部署修改</h2>
 <p>我们希望博客内容改动后能用一个脚本自动把改动内容上传到Git上, 避免输入上面几条很长的git命令, 可以用以下脚本实现:</p>
