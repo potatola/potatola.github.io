@@ -141,31 +141,29 @@ Content from the master branch will be used to build and publish your GitHub Pag
 <ol>
 <li>
 <p>打开<code>git bash</code>命令行窗口, 切换到Pelican根目录, 执行以下命里初始化Git Repo:</p>
-<div class="highlight"><pre>git init
-git commit -m &#39;init&#39;
-git remote add origin git@github.com:{username}/{username}.github.io.git
-</pre></div>
-
-
+<p>:::sh
+git init
+git commit -m 'init'
+git remote add origin git@github.com:{username}/{username}.github.io.git</p>
 </li>
 <li>
 <p>利用<code>ghp-import</code>工具发布网页:</p>
-<div class="highlight"><pre><span class="n">git</span> <span class="n">branch</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span> <span class="c">#只有第一次需要执行</span>
-<span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="nn">output</span>
-<span class="n">git</span> <span class="n">push</span> <span class="n">git</span><span class="nd">@github.com</span><span class="p">:{</span><span class="n">username</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">username</span><span class="p">}</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">git</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span><span class="p">:</span><span class="n">master</span>
-</pre></div>
-
-
+<p>:::sh
+git branch gh-pages #只有第一次需要执行
+ghp-import output
+git push git@github.com:{username}/{username}.github.io.git gh-pages:master</p>
 </li>
 </ol>
 <p>这样就可以通过访问 <code>{username}.github.io</code> 访问博客网页了.</p>
 <h2>存档项目到git</h2>
 <p>为了能够在不同电脑上同步自己的Pelican, 我们顺便把整个Pelican目录同步到这个Repository里面, 只要新建一个分支就好了, 在Pelican根目录下执行</p>
-<p>:::sh
-git checkout -b source
+<div class="highlight"><pre>git checkout -b <span class="nb">source</span>
 git add .
-git commit -m 'first commit'
-git push origin source</p>
+git commit -m <span class="s1">&#39;first commit&#39;</span>
+git push origin <span class="nb">source</span>
+</pre></div>
+
+
 <h1>进阶功能</h1>
 <h2>安装主题</h2>
 <ol>
@@ -181,13 +179,13 @@ git push origin source</p>
 ghp-import output
 git push git@github.com:<span class="o">{</span>yourname<span class="o">}</span>/<span class="o">{</span>yourname<span class="o">}</span>.github.io.git gh-pages:master
 
-    :::sh
-    <span class="k">if</span> <span class="nv">$# </span><span class="o">==</span> 0:
-        <span class="nb">echo</span> <span class="s2">&quot;don&#39;t forget the commit description&quot;</span>
-        <span class="nb">exit </span>0
-    git add .
-    git commit -m <span class="nv">$1</span>
-    git push origin <span class="nb">source</span>
+:::sh
+<span class="k">if</span> <span class="nv">$# </span><span class="o">==</span> 0:
+    <span class="nb">echo</span> <span class="s2">&quot;don&#39;t forget the commit description&quot;</span>
+    <span class="nb">exit </span>0
+git add .
+git commit -m <span class="nv">$1</span>
+git push origin <span class="nb">source</span>
 </pre></div>
             </div>
             <!-- /.entry-content -->
