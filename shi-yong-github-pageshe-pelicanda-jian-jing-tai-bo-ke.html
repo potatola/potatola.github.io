@@ -129,7 +129,7 @@ Deadline's Coming            </a>
 接下来在项目根目录下(<code>Pelican</code>目录)执行</p>
 <p><code>pelican content</code></p>
 <p>就成功建立了第一篇博文.</p>
-<h2>使用Github Pages生成免费博客</h2>
+<h1>使用Github Pages生成免费博客</h1>
 <h3>新建Repository</h3>
 <p>申请Git账号就不说了, 为了使用Github的免费个人主页功能, 我们需要新建一个名为<code>{username}.github.io</code>的Repository(注意这里{username}必须和Github用户名相同). 详情可以参考<a href="https://help.github.com/articles/user-organization-and-project-pages/">Github Help</a>, 注意两点:</p>
 <blockquote>
@@ -149,12 +149,38 @@ git remote add origin git@github.com:{username}/{username}.github.io.git
 </li>
 <li>
 <p>利用<code>ghp-import</code>工具发布网页:</p>
-<p>git branch gh-pages #只有第一次需要执行
-ghp-import output
-git push git@github.com:{username}/{username}.github.io.git gh-pages:master</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">branch</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span> <span class="c">#只有第一次需要执行</span>
+<span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="nn">output</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">git</span><span class="nd">@github.com</span><span class="p">:{</span><span class="n">username</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">username</span><span class="p">}</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">git</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span><span class="p">:</span><span class="n">master</span>
+</pre></div>
+
+
 </li>
 </ol>
 <p>这样就可以通过访问 <code>{username}.github.io</code> 访问博客网页了.</p>
+<h1>进阶功能</h1>
+<h2>安装主题</h2>
+<ol>
+<li>网上搜索到喜欢的Pelican主题之后(比如我使用的<a href="https://github.com/DandyDev/pelican-bootstrap3">bootstrap3</a>, 把主题下载到某个目录.
+        git clone https://github.com/DandyDev/pelican-bootstrap3.git /path/to/bs3</li>
+<li>安装主题到Pelican中
+        pelican-themes --install /path/to/bs3</li>
+<li>指定Pelican使用该主题(这里要注意上一步安装完并不代表会使用这个主题), 即修改配置文件<code>pelicanconf.py</code>中的<code>THEME</code>字段(或新建该字段)指向要使用的主题<code>/path/to/bs3</code></li>
+</ol>
+<h2>自动部署修改</h2>
+<p>我们希望博客内容改动后能用一个脚本自动把改动内容上传到Git上, 避免输入上面几条很长的git命令, 可以用以下脚本实现:
+``` shell 自动部署网页到Github
+pelican content -s pelicanconf.py
+ghp-import output
+git push git@github.com:{yourname}/{yourname}.github.io.git gh-pages:master</p>
+<div class="highlight"><pre>``` shell 自动备份整个项目到Github
+if $# == 0:
+    echo &quot;don&#39;t forget the commit description&quot;
+    exit 0
+git add .
+git commit -m $1
+git push origin source
+</pre></div>
             </div>
             <!-- /.entry-content -->
         </article>
