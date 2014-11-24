@@ -179,18 +179,17 @@ git remote add origin git@github.com:{username}/{username}.github.io.git
 </ol>
 <h2>自动部署修改</h2>
 <p>我们希望博客内容改动后能用一个脚本自动把改动内容上传到Git上, 避免输入上面几条很长的git命令, 可以用以下脚本实现:</p>
-<p>``` shell 自动部署网页到Github
+<p>:::shell
 pelican content -s pelicanconf.py
 ghp-import output
 git push git@github.com:{yourname}/{yourname}.github.io.git gh-pages:master</p>
-<div class="highlight"><pre>``` shell 自动备份整个项目到Github
+<p>:::shell
 if $# == 0:
-    echo &quot;don&#39;t forget the commit description&quot;
+    echo "don't forget the commit description"
     exit 0
 git add .
 git commit -m $1
-git push origin source
-</pre></div>
+git push origin source</p>
             </div>
             <!-- /.entry-content -->
         </article>
