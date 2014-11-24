@@ -1,4 +1,4 @@
-Title: 使用Github pages和Pelican搭建静态博客
+Title: Github pages和Pelican搭建静态博客
 Date: 2014-11-24 13:23:21
 Category: Tools
 
@@ -23,14 +23,16 @@ Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了
 ### 安装Pelican
 在cmd窗口中执行`pip install pelican markdown`, 自动安装一堆之后显示"Successfully installed pelican markdown jinja2...". 注意可能由于网络问题超时失败, 重新执行命令即可.
 
-### 新建一个Pelican目录
+# 初始化Pelican
+
+## 新建一个Pelican目录
 在你想要存放本地Pelican文件夹的地方新建文件夹(比如`Pelican`), 运行`cmd`进入该目录. 执行
 
         pelican-quickstart
         
 回答一系列问题(除了基本信息以外其他都可以直接回车用默认设置, 后面还可以改). 这样就在`Pelican`目录中建立了基本的Pelican文件框架.
 
-### 写第一个Blog页面
+## 写第一个Blog页面
 用任意文本编辑器新建一个文本文件, 内容为(举例):
 
         Title: My First Review
@@ -42,29 +44,79 @@ Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了
 保存在`Pelican/content/keyboard-review.md`
 接下来在项目根目录下(`Pelican`目录)执行
 
-```pelican content```
+        pelican content
 
 就成功建立了第一篇博文.
 
-## 使用Github Pages生成免费博客
+# 发布网页到Github Pages
 
-### 新建Repository
+## 新建Repository
 申请Git账号就不说了, 为了使用Github的免费个人主页功能, 我们需要新建一个名为`{username}.github.io`的Repository(注意这里{username}必须和Github用户名相同). 详情可以参考[Github Help](https://help.github.com/articles/user-organization-and-project-pages/), 注意两点:
 
 >You must use the username.github.io naming scheme.
 >Content from the master branch will be used to build and publish your GitHub Pages site.
 
-### 发布网页
-1. 打开`git bash`命令行窗口, 切换到Pelican根目录, 执行以下命里初始化Git Repo:
+## 发布网页
+打开`git bash`命令行窗口, 切换到Pelican根目录, 执行以下命里初始化Git Repo
 
-        git init
-        git commit -m 'init'
-        git remote add origin git@github.com:{username}/{username}.github.io.git
+    :::sh
+    git init
+    git commit -m 'init'
+    git remote add origin git@github.com:{username}/{username}.github.io.git
         
-2. 利用`ghp-import`工具发布网页:
+利用`ghp-import`工具发布网页
 
-        git branch gh-pages #只有第一次需要执行
-        ghp-import output
-        git push git@github.com:{username}/{username}.github.io.git gh-pages:master
+    :::sh
+    git branch gh-pages #只有第一次需要执行
+    ghp-import output
+    git push git@github.com:{username}/{username}.github.io.git gh-pages:master
 
 这样就可以通过访问 `{username}.github.io` 访问博客网页了.
+
+## 存档项目到git
+为了能够在不同电脑上同步自己的Pelican, 我们顺便把整个Pelican目录同步到这个Repository里面, 只要新建一个分支就好了, 在Pelican根目录下执行
+
+    :::sh
+    git checkout -b source
+    git add .
+    git commit -m 'first commit'
+    git push origin source
+
+# 进阶功能
+
+## 安装主题
+1. 网上搜索到喜欢的Pelican主题之后(比如我使用的[bootstrap3](https://github.com/DandyDev/pelican-bootstrap3), 把主题下载到某个目录.
+
+        git clone https://github.com/DandyDev/pelican-bootstrap3.git /path/to/bs3
+        
+2. 安装主题到Pelican中
+
+        pelican-themes --install /path/to/bs3
+        
+3. 指定Pelican使用该主题(这里要注意上一步安装完并不代表会使用这个主题), 即修改配置文件`pelicanconf.py`中的`THEME`字段(或新建该字段)指向要使用的主题`/path/to/bs3`
+
+## 自动部署修改
+我们希望博客内容改动后能用一个脚本自动把改动内容上传到Git上, 避免输入上面几条很长的git命令, 可以用以下脚本实现:
+
+上传网站
+
+    :::sh
+    pelican content -s pelicanconf.py
+    ghp-import output
+    git push git@github.com:{yourname}/{yourname}.github.io.git gh-pages:master
+
+同步源代码
+    
+    :::sh
+    if $# == 0:
+        echo "don't forget the commit description"
+        exit 0
+    git add .
+    git commit -m $1
+    git push origin source
+    
+# 遗留问题
+1. 代码高亮功能, 如果是在一个列表条目下面就会失效, 比如下面这个
+
+    :::sh
+    echo "this is the code."

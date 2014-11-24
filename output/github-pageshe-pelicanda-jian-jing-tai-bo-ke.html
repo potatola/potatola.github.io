@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>使用Github pages和Pelican搭建静态博客 - Deadline's Coming</title>
+    <title>Github pages和Pelican搭建静态博客 - Deadline's Coming</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,15 +10,15 @@
 
 
 
-<link rel="canonical" href="/shi-yong-github-pageshe-pelicanda-jian-jing-tai-bo-ke.html">
+<link rel="canonical" href="/github-pageshe-pelicanda-jian-jing-tai-bo-ke.html">
 
         <meta name="author" content="Geng Yufeng" />
         <meta name="description" content="Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了, 因为对Ruby实在是一无所知, 在安装过程中遇到各种Bug只能疯狂google, 照搬别人的解决方案. 另外在我安装自定义主题的时候有很多不满意的地方都不太清楚怎么修改. 如果用了别人的东西写博客却连原理是什么都不知道, 就有点怂了. 好歹还是知道点Python的, 不如干脆换一个基于Python的生成器, 一番调研最后决定用Pelican了(其实就是随便挑了一个吧喂= =) 为了体现一个计算机渣硕的专业技能, 决定不看网上各种教程, 自己对照官方文档安装(‘▽′)/ 安装Pelican及相关软件(Windows 7) 为了完成目标我们需要用到一些依赖软件, 比如python pip git 等, 简单说下. 安装python pip git 我用的python版本是2.7.8, 在python官网下载安装即可. 安装pip, 参考pip quickstart, windows用户需要注意在PATH系统变量中添加python安装路径下的scripts文件夹. 安装git, 直接官网下载最新版安装 安装ghp-import, 执行pip install ghp-import ..." />
 
         <meta property="og:site_name" content="Deadline's Coming" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="使用Github pages和Pelican搭建静态博客"/>
-        <meta property="og:url" content="/shi-yong-github-pageshe-pelicanda-jian-jing-tai-bo-ke.html"/>
+        <meta property="og:title" content="Github pages和Pelican搭建静态博客"/>
+        <meta property="og:url" content="/github-pageshe-pelicanda-jian-jing-tai-bo-ke.html"/>
         <meta property="og:description" content="Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了, 因为对Ruby实在是一无所知, 在安装过程中遇到各种Bug只能疯狂google, 照搬别人的解决方案. 另外在我安装自定义主题的时候有很多不满意的地方都不太清楚怎么修改. 如果用了别人的东西写博客却连原理是什么都不知道, 就有点怂了. 好歹还是知道点Python的, 不如干脆换一个基于Python的生成器, 一番调研最后决定用Pelican了(其实就是随便挑了一个吧喂= =) 为了体现一个计算机渣硕的专业技能, 决定不看网上各种教程, 自己对照官方文档安装(‘▽′)/ 安装Pelican及相关软件(Windows 7) 为了完成目标我们需要用到一些依赖软件, 比如python pip git 等, 简单说下. 安装python pip git 我用的python版本是2.7.8, 在python官网下载安装即可. 安装pip, 参考pip quickstart, windows用户需要注意在PATH系统变量中添加python安装路径下的scripts文件夹. 安装git, 直接官网下载最新版安装 安装ghp-import, 执行pip install ghp-import ..."/>
         <meta property="article:published_time" content="2014-11-24" />
             <meta property="article:section" content="Tools" />
@@ -71,10 +71,10 @@ Deadline's Coming            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="/shi-yong-github-pageshe-pelicanda-jian-jing-tai-bo-ke.html"
+                    <a href="/github-pageshe-pelicanda-jian-jing-tai-bo-ke.html"
                        rel="bookmark"
-                       title="Permalink to 使用Github pages和Pelican搭建静态博客">
-                        使用Github pages和Pelican搭建静态博客
+                       title="Permalink to Github pages和Pelican搭建静态博客">
+                        Github pages和Pelican搭建静态博客
                     </a>
                 </h1>
             </header>
@@ -141,22 +141,20 @@ Deadline's Coming            </a>
 Content from the master branch will be used to build and publish your GitHub Pages site.</p>
 </blockquote>
 <h2>发布网页</h2>
-<ol>
-<li>
 <p>打开<code>git bash</code>命令行窗口, 切换到Pelican根目录, 执行以下命里初始化Git Repo</p>
-<p>:::sh
-git init
-git commit -m 'init'
-git remote add origin git@github.com:{username}/{username}.github.io.git</p>
-</li>
-<li>
+<div class="highlight"><pre>git init
+git commit -m <span class="s1">&#39;init&#39;</span>
+git remote add origin git@github.com:<span class="o">{</span>username<span class="o">}</span>/<span class="o">{</span>username<span class="o">}</span>.github.io.git
+</pre></div>
+
+
 <p>利用<code>ghp-import</code>工具发布网页</p>
-<p>:::sh
-git branch gh-pages #只有第一次需要执行
+<div class="highlight"><pre>git branch gh-pages <span class="c">#只有第一次需要执行</span>
 ghp-import output
-git push git@github.com:{username}/{username}.github.io.git gh-pages:master</p>
-</li>
-</ol>
+git push git@github.com:<span class="o">{</span>username<span class="o">}</span>/<span class="o">{</span>username<span class="o">}</span>.github.io.git gh-pages:master
+</pre></div>
+
+
 <p>这样就可以通过访问 <code>{username}.github.io</code> 访问博客网页了.</p>
 <h2>存档项目到git</h2>
 <p>为了能够在不同电脑上同步自己的Pelican, 我们顺便把整个Pelican目录同步到这个Repository里面, 只要新建一个分支就好了, 在Pelican根目录下执行</p>
@@ -205,6 +203,16 @@ git add .
 git commit -m <span class="nv">$1</span>
 git push origin <span class="nb">source</span>
 </pre></div>
+
+
+<h1>遗留问题</h1>
+<ol>
+<li>
+<p>代码高亮功能, 如果是在一个列表条目下面就会失效, 比如下面这个</p>
+<p>:::sh
+echo "this is the code."</p>
+</li>
+</ol>
             </div>
             <!-- /.entry-content -->
         </article>
@@ -244,11 +252,6 @@ git push origin <span class="nb">source</span>
         <li class="list-group-item">
             <a href="http://jinja.pocoo.org/" target="_blank">
                 Jinja2
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#" target="_blank">
-                You can modify those links in your config file
             </a>
         </li>
       </ul>
