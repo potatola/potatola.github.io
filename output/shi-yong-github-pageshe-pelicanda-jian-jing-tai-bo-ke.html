@@ -1,91 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+>
 <head>
-        <meta charset="utf-8" />
-        <title>使用Github pages和Pelican搭建静态博客</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+    <title>使用Github pages和Pelican搭建静态博客 - Deadline's Coming</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+
+
+<link rel="canonical" href="/shi-yong-github-pageshe-pelicanda-jian-jing-tai-bo-ke.html">
+
+        <meta name="author" content="Geng Yufeng" />
+        <meta name="description" content="Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了, 因为对Ruby实在是一无所知, 在安装过程中遇到各种Bug只能疯狂google, 照搬别人的解决方案. 另外在我安装自定义主题的时候有很多不满意的地方都不太清楚怎么修改. 如果用了别人的东西写博客却连原理是什么都不知道, 就有点怂了. 好歹还是知道点Python的, 不如干脆换一个基于Python的生成器, 一番调研最后决定用Pelican了(其实就是随便挑了一个吧喂= =) 为了体现一个计算机渣硕的专业技能, 决定不看网上各种教程, 自己对照官方文档安装(‘▽′)/ 安装Pelican及相关软件(Windows 7) 为了完成目标我们需要用到一些依赖软件, 比如python pip git 等, 简单说下. 安装python pip git 我用的python版本是2.7.8, 在python官网下载安装即可. 安装pip, 参考pip quickstart, windows用户需要注意在PATH系统变量中添加python安装路径下的scripts文件夹. 安装git, 直接官网下载最新版安装 安装ghp-import, 执行pip install ghp-import ..." />
+
+        <meta property="og:site_name" content="Deadline's Coming" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="使用Github pages和Pelican搭建静态博客"/>
+        <meta property="og:url" content="/shi-yong-github-pageshe-pelicanda-jian-jing-tai-bo-ke.html"/>
+        <meta property="og:description" content="Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了, 因为对Ruby实在是一无所知, 在安装过程中遇到各种Bug只能疯狂google, 照搬别人的解决方案. 另外在我安装自定义主题的时候有很多不满意的地方都不太清楚怎么修改. 如果用了别人的东西写博客却连原理是什么都不知道, 就有点怂了. 好歹还是知道点Python的, 不如干脆换一个基于Python的生成器, 一番调研最后决定用Pelican了(其实就是随便挑了一个吧喂= =) 为了体现一个计算机渣硕的专业技能, 决定不看网上各种教程, 自己对照官方文档安装(‘▽′)/ 安装Pelican及相关软件(Windows 7) 为了完成目标我们需要用到一些依赖软件, 比如python pip git 等, 简单说下. 安装python pip git 我用的python版本是2.7.8, 在python官网下载安装即可. 安装pip, 参考pip quickstart, windows用户需要注意在PATH系统变量中添加python安装路径下的scripts文件夹. 安装git, 直接官网下载最新版安装 安装ghp-import, 执行pip install ghp-import ..."/>
+        <meta property="article:published_time" content="2014-11-24" />
+            <meta property="article:section" content="Tools" />
+            <meta property="article:author" content="Geng Yufeng" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
 </head>
+<body>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Deadline's Coming </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="/category/tools.html">Tools</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/shi-yong-github-pageshe-pelicanda-jian-jing-tai-bo-ke.html" rel="bookmark"
-           title="Permalink to 使用Github pages和Pelican搭建静态博客">使用Github pages和Pelican搭建静态博客</a></h1>
-    </header>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Deadline's Coming            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/category/tools.html">Tools</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
 
-    <div class="entry-content">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/shi-yong-github-pageshe-pelicanda-jian-jing-tai-bo-ke.html"
+                       rel="bookmark"
+                       title="Permalink to 使用Github pages和Pelican搭建静态博客">
+                        使用Github pages和Pelican搭建静态博客
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
 <footer class="post-info">
-        <abbr class="published" title="2014-11-24T13:23:21+01:00">
-                Published: 周一 24 十一月 2014
-        </abbr>
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-11-24T13:23:21+01:00"> 周一 24 十一月 2014</time>
+    </span>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/geng-yufeng.html">Geng Yufeng</a>
-        </address>
-<p>In <a href="/category/tools.html">Tools</a>. </p>
 
-</footer><!-- /.post-info -->      <p>Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了, 因为对Ruby实在是一无所知, 在安装过程中遇到各种Bug只能疯狂google, 照搬别人的解决方案. 另外在我安装自定义主题的时候有很多不满意的地方都不太清楚怎么修改. 如果用了别人的东西写博客却连原理是什么都不知道, 就有点怂了.</p>
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了, 因为对Ruby实在是一无所知, 在安装过程中遇到各种Bug只能疯狂google, 照搬别人的解决方案. 另外在我安装自定义主题的时候有很多不满意的地方都不太清楚怎么修改. 如果用了别人的东西写博客却连原理是什么都不知道, 就有点怂了.</p>
 <p>好歹还是知道点Python的, 不如干脆换一个基于Python的生成器, 一番调研最后决定用Pelican了(其实就是随便挑了一个吧喂= =)</p>
 <p>为了体现一个计算机渣硕的专业技能, 决定不看网上各种教程, 自己对照官方文档安装(‘▽′)/  </p>
-<h1>安装Pelican(Windows 7)</h1>
-<p>需要用的的软件包括<code>python</code> <code>pip</code> </p>
-<h2>安装<code>python</code> <code>pip</code></h2>
+<h1>安装Pelican及相关软件(Windows 7)</h1>
+<p>为了完成目标我们需要用到一些依赖软件, 比如<code>python</code> <code>pip</code> <code>git</code> 等, 简单说下.</p>
+<h2>安装<code>python</code> <code>pip</code> <code>git</code></h2>
 <ol>
 <li>我用的python版本是2.7.8, 在<a href="https://www.python.org/downloads/">python官网</a>下载安装即可.</li>
-<li>
-<p>安装<code>pip</code>, 参考<a href="https://pip.pypa.io/en/latest/installing.html">pip quickstart</a>, windows用户需要注意在PATH系统变量中添加python安装路径下的scripts文件夹.</p>
+<li>安装<code>pip</code>, 参考<a href="https://pip.pypa.io/en/latest/installing.html">pip quickstart</a>, windows用户需要注意在PATH系统变量中添加python安装路径下的scripts文件夹.</li>
+<li>安装<code>git</code>, 直接官网下载最新版安装</li>
+<li>安装<code>ghp-import</code>, 执行<code>pip install ghp-import</code>即可. 如果安装完在命令行中提示没有这个命令, 需要把python安装目录下的<code>/Lib/site-packages</code>目录添加到系统path中.</li>
+</ol>
+<h2>安装及初始化Pelican</h2>
+<p>参照Pelican文档中<a href="http://docs.getpelican.com/en/3.5.0/quickstart.html">quickstart</a>这一章可以快速完成Pelican的安装和初始化.</p>
+<h3>安装Pelican</h3>
+<p>在cmd窗口中执行<code>pip install pelican markdown</code>, 自动安装一堆之后显示"Successfully installed pelican markdown jinja2...". 注意可能由于网络问题超时失败, 重新执行命令即可.</p>
+<h3>新建一个Pelican目录</h3>
+<p>在你想要存放本地Pelican文件夹的地方新建文件夹(比如<code>Pelican</code>), 运行<code>cmd</code>进入该目录. 执行</p>
+<div class="highlight"><pre>    pelican-quickstart
+</pre></div>
+
+
+<p>回答一系列问题(除了基本信息以外其他都可以直接回车用默认设置, 后面还可以改). 这样就在<code>Pelican</code>目录中建立了基本的Pelican文件框架.</p>
+<h3>写第一个Blog页面</h3>
+<p>用任意文本编辑器新建一个文本文件, 内容为(举例):</p>
+<div class="highlight"><pre>    Title: My First Review
+    Date: 2010-12-03 10:20
+    Category: Review
+
+    Following is a review of my favorite mechanical keyboard.
+</pre></div>
+
+
+<p>保存在<code>Pelican/content/keyboard-review.md</code>
+接下来在项目根目录下(<code>Pelican</code>目录)执行</p>
+<p><code>pelican content</code></p>
+<p>就成功建立了第一篇博文.</p>
+<h2>使用Github Pages生成免费博客</h2>
+<h3>新建Repository</h3>
+<p>申请Git账号就不说了, 为了使用Github的免费个人主页功能, 我们需要新建一个名为<code>{username}.github.io</code>的Repository(注意这里{username}必须和Github用户名相同). 详情可以参考<a href="https://help.github.com/articles/user-organization-and-project-pages/">Github Help</a>, 注意两点:</p>
 <blockquote>
-<p>To enable the use of pip from the command line, ensure the Scripts subdirectory of your Python installation is available on the system PATH. (This is not done automatically.)</p>
+<p>You must use the username.github.io naming scheme.
+Content from the master branch will be used to build and publish your GitHub Pages site.</p>
 </blockquote>
+<h3>发布网页</h3>
+<ol>
+<li>
+<p>打开<code>git bash</code>命令行窗口, 切换到Pelican根目录, 执行以下命里初始化Git Repo:</p>
+<div class="highlight"><pre>git init
+git commit -m &#39;init&#39;
+git remote add origin git@github.com:{username}/{username}.github.io.git
+</pre></div>
+
+
 </li>
 <li>
-<p>安装Pelican
-在cmd窗口中执行<code>pip install pelican markdown</code>, 自动安装一堆之后显示"Successfully installed pelican markdown jinja2...". 注意可能由于网络问题超时失败, 重新执行命令即可.</p>
+<p>利用<code>ghp-import</code>工具发布网页:</p>
+<p>git branch gh-pages #只有第一次需要执行
+ghp-import output
+git push git@github.com:{username}/{username}.github.io.git gh-pages:master</p>
 </li>
 </ol>
-    </div><!-- /.entry-content -->
+<p>这样就可以通过访问 <code>{username}.github.io</code> 访问博客网页了.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
 
-  </article>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
 </section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 Geng Yufeng
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
 
 </body>
 </html>
