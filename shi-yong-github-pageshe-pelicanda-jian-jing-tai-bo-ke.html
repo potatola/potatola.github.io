@@ -161,13 +161,11 @@ git remote add origin git@github.com:{username}/{username}.github.io.git
 <p>这样就可以通过访问 <code>{username}.github.io</code> 访问博客网页了.</p>
 <h2>存档项目到git</h2>
 <p>为了能够在不同电脑上同步自己的Pelican, 我们顺便把整个Pelican目录同步到这个Repository里面, 只要新建一个分支就好了, 在Pelican根目录下执行</p>
-<div class="highlight"><pre>    git checkout -b source
-    git add .
-    git commit -m &#39;first commit&#39;
-    git push origin source
-</pre></div>
-
-
+<p>:::shell
+git checkout -b source
+git add .
+git commit -m 'first commit'
+git push origin source</p>
 <h1>进阶功能</h1>
 <h2>安装主题</h2>
 <ol>
