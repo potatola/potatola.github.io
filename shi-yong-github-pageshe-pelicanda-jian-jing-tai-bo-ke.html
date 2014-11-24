@@ -84,7 +84,7 @@ Deadline's Coming            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-11-24T13:23:21+01:00"> 周一 24 十一月 2014</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-11-24T13:23:21+08:00"> 周一 24 十一月 2014</time>
     </span>
 
 
@@ -177,17 +177,18 @@ git push origin source</p>
 </ol>
 <h2>自动部署修改</h2>
 <p>我们希望博客内容改动后能用一个脚本自动把改动内容上传到Git上, 避免输入上面几条很长的git命令, 可以用以下脚本实现:</p>
-<p>:::sh
-pelican content -s pelicanconf.py
+<div class="highlight"><pre>pelican content -s pelicanconf.py
 ghp-import output
-git push git@github.com:{yourname}/{yourname}.github.io.git gh-pages:master</p>
-<p>:::sh
-if $# == 0:
-    echo "don't forget the commit description"
-    exit 0
-git add .
-git commit -m $1
-git push origin source</p>
+git push git@github.com:<span class="o">{</span>yourname<span class="o">}</span>/<span class="o">{</span>yourname<span class="o">}</span>.github.io.git gh-pages:master
+
+    :::sh
+    <span class="k">if</span> <span class="nv">$# </span><span class="o">==</span> 0:
+        <span class="nb">echo</span> <span class="s2">&quot;don&#39;t forget the commit description&quot;</span>
+        <span class="nb">exit </span>0
+    git add .
+    git commit -m <span class="nv">$1</span>
+    git push origin <span class="nb">source</span>
+</pre></div>
             </div>
             <!-- /.entry-content -->
         </article>
