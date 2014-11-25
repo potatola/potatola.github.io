@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Geng Yufeng'
 SITENAME = u"Deadline's Coming"
-SITEURL = ''
+SITEURL = 'http://potatola.github.io/'
 
 PATH = 'content'
 
@@ -28,8 +28,8 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Jinja2', 'http://jinja.pocoo.org/'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+# SOCIAL = (('You can add links in your config file', '#'),
+          # ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 

@@ -1,6 +1,11 @@
 Title: Github pages和Pelican搭建静态博客
 Date: 2014-11-24 13:23:21
 Category: Tools
+Tags: Pelican
+Authors: Geng Yufeng
+Summary:
+url: setup-github-pelican
+save_as: setup-github-pelican.html
 
 Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了, 因为对Ruby实在是一无所知, 在安装过程中遇到各种Bug只能疯狂google, 照搬别人的解决方案. 另外在我安装自定义主题的时候有很多不满意的地方都不太清楚怎么修改. 如果用了别人的东西写博客却连原理是什么都不知道, 就有点怂了.
 
