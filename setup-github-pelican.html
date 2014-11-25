@@ -153,8 +153,7 @@ git remote add origin git@github.com:<span class="o">{</span>username<span class
 
 <p>利用<code>ghp-import</code>工具发布网页</p>
 <div class="highlight"><pre>git branch gh-pages <span class="c">#只有第一次需要执行</span>
-ghp-import output
-git push git@github.com:<span class="o">{</span>username<span class="o">}</span>/<span class="o">{</span>username<span class="o">}</span>.github.io.git gh-pages:master
+ghp-import -b master -p output <span class="c">#-b master指定分支为master(用于personal page), -p直接尝试push</span>
 </pre></div>
 
 
@@ -193,8 +192,7 @@ git push origin <span class="nb">source</span>
 <p>我们希望博客内容改动后能用一个脚本自动把改动内容上传到Git上, 避免输入上面几条很长的git命令, 可以用以下脚本实现:</p>
 <p>上传网站</p>
 <div class="highlight"><pre>pelican content -s pelicanconf.py
-ghp-import output
-git push git@github.com:<span class="o">{</span>yourname<span class="o">}</span>/<span class="o">{</span>yourname<span class="o">}</span>.github.io.git gh-pages:master
+ghp-import -b master -p output
 </pre></div>
 
 
@@ -254,6 +252,11 @@ echo "this is the code."</p>
         <li class="list-group-item">
             <a href="http://jinja.pocoo.org/" target="_blank">
                 Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://git-scm.com/book/zh/v1" target="_blank">
+                git-book
             </a>
         </li>
       </ul>
