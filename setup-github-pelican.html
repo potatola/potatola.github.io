@@ -21,7 +21,7 @@
         <meta property="og:url" content="http://potatola.github.io/setup-github-pelican"/>
         <meta property="og:description" content=""/>
         <meta property="article:published_time" content="2014-11-24" />
-            <meta property="article:section" content="Tools" />
+            <meta property="article:section" content="工具" />
             <meta property="article:tag" content="Pelican" />
             <meta property="article:author" content="Geng Yufeng" />
 
@@ -52,7 +52,7 @@ Deadline's Coming            </a>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="http://potatola.github.io/category/tools.html">Tools</a>
+                            <a href="http://potatola.github.io/category/gong-ju.html">工具</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -157,7 +157,7 @@ ghp-import -b master -p output <span class="c">#-b master指定分支为master(�
 </pre></div>
 
 
-<p>这样就可以通过访问 <code>{username}.github.io</code> 访问博客网页了.</p>
+<p>这样就可以通过访问 <code>{username}.github.io</code> 访问博客网页了. 话说我第一次上传后等了十几分钟也没出现, 不得已把Repo删了重新上传一遍, 过了一会就有了...之前搞Octopress也是这样, 简直逼疯.</p>
 <h2>存档项目到git</h2>
 <p>为了能够在不同电脑上同步自己的Pelican, 我们顺便把整个Pelican目录同步到这个Repository里面, 只要新建一个分支就好了, 在Pelican根目录下执行</p>
 <div class="highlight"><pre>git checkout -b <span class="nb">source</span>
@@ -191,8 +191,13 @@ git push origin <span class="nb">source</span>
 <h2>自动部署修改</h2>
 <p>我们希望博客内容改动后能用一个脚本自动把改动内容上传到Git上, 避免输入上面几条很长的git命令, 可以用以下脚本实现:</p>
 <p>上传网站</p>
-<div class="highlight"><pre>pelican content -s pelicanconf.py
-ghp-import -b master -p output
+<div class="highlight"><pre><span class="k">if</span> <span class="o">[</span> <span class="nv">$# </span><span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;don&#39;t forget the commit description&quot;</span>
+    <span class="nb">exit </span>0
+<span class="k">fi</span>
+pelican content -s pelicanconf.py
+ghp-import -b master -m <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> output
+git push origin master:master -f <span class="c"># -f表示用本地分支强制覆盖远程分支, 在多地同步的时候可能会用到</span>
 </pre></div>
 
 
