@@ -64,16 +64,26 @@ Deadline's Coming            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://potatola.github.io/Ubuntu-mount-NTFS.html">Ubuntu挂载动态磁盘NTFS分区失败</a></h2>
-                <div class="summary"><h1>不作死就不会死前奏</h1>
-<p>作为一个程序猿, 每次别人第一次听到我的专业, 第一反应就是"啊, 太好了, 我电脑blabla, 你可以帮我修一修吗?"(当然大部分都是妹子~~), 虽然大部分都只是开个玩笑, 但总有那么几个认真的, 真的会把各种问题的电脑交给我, 于是在我折腾半天找不到问题在哪的时候, 又会有另一番对话:"喂, 那个你C盘有重要的东西没?...哦好的, 那我给你重装系统了啊". 就酱, 装系统成了家常便饭.</p>
-<p>但是装系统是要付出代价的, 好像每次重装系统都没有一帆风顺过.</p>
-<h1>win8转Ubuntu</h1>
-<p>之前从win7升级到win8之后总觉得电脑变卡了, 所以一直在找机会重新装回win7, 结果最后终于重装的时候发现又遇到了"不能安装到这个分区"的问题, 而我已经格盘了... 一气之下决定装一个Ubuntu, 顺便熟悉一下Linux. (之前的多次尝试都因为用了双系统, 用了一会就被我轻松删了, 这次果断没有给自己留后路)</p>
-<p>安装过程很顺利, 用UltraISO刻U盘安装盘, 从U盘启动安装, 一起都那么顺其自然, 显得那么的暗藏杀机.</p>
-<p>果然, 装完之后总会有那么几个bug, 这次是我之前放学习资料的一个分区挂载失败了. 提示</p>
+                <h2><a href="http://potatola.github.io/Ubuntu-tips.html">使用Ubuntu的一些问题和解决办法</a></h2>
+                <div class="summary"><h1>Chromium Flash插件安装问题</h1>
+<p>安装了Adobe Flash, 用firefox可以正常看视频, 但是用Chromium提示需要安装flash插件并给出Adobe官网链接, 选择下载后转到"Ubuntu软件中心", 提示</p>
 <blockquote>
-<p>Error mounting : mount exited with exit code ...</p></blockquote>
+<p>在您当前的软件源中没有名为 “adobe-flashplugin”的软件包。</p>
+</blockquote>
+<h2>解决</h2>
+<p>参考<a href="http://www.linuxidc.com/Linux/2014-05/101095.htm">Ubuntu 14.04安装Chromium浏览器并添加Flash插件Pepper Flash Player</a>, 安装插件即可.</p>
+                    <a class="btn btn-default btn-xs" href="http://potatola.github.io/Ubuntu-tips.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://potatola.github.io/Ubuntu-mount-NTFS.html">Ubuntu挂载动态磁盘NTFS分区失败</a></h2>
+                <div class="summary"><h1>Summary</h1>
+<p>如果刚刚从windows安装为Ubuntu, 之后发现整块磁盘上, 只有一个分区无法挂载, 提示<code>Error mounting : mount exited with exit code 12: Failed to read last sector</code> 以及 <code>Volume is corrupt, run chkdsk</code> 一类错误的问题, 有一个可能的原因, 就是:</p>
+<p><strong>在windows下使用了动态磁盘分区, 并且有的分区占据了不连续的物理位置, 那么这个分区就会出现挂载失败的情况</strong></p>
+<p>我的解决办法是, **重新进入windows系统(可能需要重装一个), 在windows下是能看到之前的这个分区的, 但是会显示成两个重名的分区(应该是不同物理位置各显示为一个), 执行 <code>chkdsk e: /f</code>('e:'是我那个有问题的盘的盘符), 等待修复完, 就能至少恢复大部分的数据了.</p>
+<h1>不作死就不会死前奏</h1>
+<p>作为一个程序猿, 每次别人第一次听到我的专业, 第一反应就是"啊, 太好了 ...</p>
                     <a class="btn btn-default btn-xs" href="http://potatola.github.io/Ubuntu-mount-NTFS.html">more ...</a>
                 </div>
             </article>
@@ -107,9 +117,9 @@ Deadline's Coming            </a>
 
             <li class="list-group-item"><a href="http://potatola.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-1">
                         <a href="http://potatola.github.io/tag/ubuntu.html">
-                            ubuntu
+                            Ubuntu
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
