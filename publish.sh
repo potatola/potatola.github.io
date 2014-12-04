@@ -1,7 +1,4 @@
-if [ $# == 0 ]; then
-    echo "don't forget the commit description"
-    exit 0
-fi
+read -p "input comment:" comment
 pelican content -s pelicanconf.py
-ghp-import -b master -m "$1" output
+ghp-import -b master -m "$comment" output
 git push origin master:master -f

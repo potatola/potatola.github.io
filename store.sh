@@ -1,7 +1,4 @@
-if [ $# == 0 ]; then
-    echo "don't forget the commit description"
-    exit 0
-fi
+read -p "input comment:" comment
 git add -A .
-git commit -m "$1"
+git commit -m "$comment"
 git push origin source
