@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Mediastreamer2-2.11 windows VS2010 编译 - Deadline's Coming</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://potatola.github.io/Mediastreamer2-compilation.html">
+
+        <meta name="author" content="Geng Yufeng" />
+        <meta name="keywords" content="video streaming" />
+        <meta name="description" content="之前一直在用Linphone软件下的开源库Mediastreamer2-2.8版本做实时视频传输中码率自适应的实验, 在底层oRTP库里面实现了一些自己的算法, 虽说问题不少, 也还算取得了一点成果. 最近准备在FEC冗余保护方面做一些系统实现, 依然选择在Mediastreamer2上做. 不过考虑到社区一直对Linphone进行更新, 可能已经做了很多改进和修复, 所以决定下载最新版本的Mediastreamer2进行实验. 没想到光是编译就用了好几天时间, 自己对Windows程序的编译/链接等过程确实没太多了解, 主要用了低效率的暴力尝试法(瞎试), 这里简单记录下过程. 环境准备 首先当然是在Linphone官网 下载页面 clone代码, 下载Mediastreamer2后, 还要根据README里的指示下载好oRTP模块和linphone-deps部分. README中windows相关说明如下: Windows XP and later with Visual Studio 2010 1) Make a directory where you have together: oRTP (clone from git://git ..." />
+
+        <meta property="og:site_name" content="Deadline's Coming" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Mediastreamer2-2.11 windows VS2010 编译"/>
+        <meta property="og:url" content="http://potatola.github.io/Mediastreamer2-compilation.html"/>
+        <meta property="og:description" content="之前一直在用Linphone软件下的开源库Mediastreamer2-2.8版本做实时视频传输中码率自适应的实验, 在底层oRTP库里面实现了一些自己的算法, 虽说问题不少, 也还算取得了一点成果. 最近准备在FEC冗余保护方面做一些系统实现, 依然选择在Mediastreamer2上做. 不过考虑到社区一直对Linphone进行更新, 可能已经做了很多改进和修复, 所以决定下载最新版本的Mediastreamer2进行实验. 没想到光是编译就用了好几天时间, 自己对Windows程序的编译/链接等过程确实没太多了解, 主要用了低效率的暴力尝试法(瞎试), 这里简单记录下过程. 环境准备 首先当然是在Linphone官网 下载页面 clone代码, 下载Mediastreamer2后, 还要根据README里的指示下载好oRTP模块和linphone-deps部分. README中windows相关说明如下: Windows XP and later with Visual Studio 2010 1) Make a directory where you have together: oRTP (clone from git://git ..."/>
+        <meta property="article:published_time" content="2015-10-20" />
+            <meta property="article:section" content="video streaming" />
+            <meta property="article:tag" content="video streaming" />
+            <meta property="article:author" content="Geng Yufeng" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://potatola.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://potatola.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://potatola.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://potatola.github.io/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://potatola.github.io/" class="navbar-brand">
+Deadline's Coming            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="http://potatola.github.io/category/shopping.html">Shopping</a>
+                        </li>
+                        <li >
+                            <a href="http://potatola.github.io/category/tools.html">Tools</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://potatola.github.io/category/video-streaming.html">Video streaming</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://potatola.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://potatola.github.io/Mediastreamer2-compilation.html"
+                       rel="bookmark"
+                       title="Permalink to Mediastreamer2-2.11 windows VS2010 编译">
+                        Mediastreamer2-2.11 windows VS2010 编译
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-10-20T07:23:54+08:00"> 周二 20 十月 2015</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://potatola.github.io/tag/video-streaming.html">video streaming</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>之前一直在用Linphone软件下的开源库Mediastreamer2-2.8版本做实时视频传输中码率自适应的实验, 在底层oRTP库里面实现了一些自己的算法, 虽说问题不少, 也还算取得了一点成果. 最近准备在FEC冗余保护方面做一些系统实现, 依然选择在Mediastreamer2上做. 不过考虑到社区一直对Linphone进行更新, 可能已经做了很多改进和修复, 所以决定下载最新版本的Mediastreamer2进行实验. 没想到光是编译就用了好几天时间, 自己对Windows程序的编译/链接等过程确实没太多了解, 主要用了低效率的暴力尝试法(瞎试), 这里简单记录下过程.</p>
+<h2>环境准备</h2>
+<p>首先当然是在Linphone官网 <a href="http://www.linphone.org/technical-corner/mediastreamer2/downloads">下载页面</a> clone代码, 下载Mediastreamer2后, 还要根据<code>README</code>里的指示下载好<code>oRTP</code>模块和<code>linphone-deps</code>部分. README中windows相关说明如下:</p>
+<blockquote>
+<ul>
+<li><strong>Windows XP and later with Visual Studio 2010</strong>
+    1) Make a directory where you have together:
+        oRTP (clone from git://git.linphone.org/ortp.git )
+        mediastreamer2 (clone from git://git.linphone.org/mediastreamer2.git)
+        linphone-deps (directory to be created).
+    2) Download latest linphone-deps-win32 zip from http://download-mirror.savannah.gnu.org/releases/linphone/misc/ and unpack it in the linphone-deps directory.
+    3) open build/win32native/mediastreamer2.sln</li>
+</ul>
+</blockquote>
+<p>注意直接按照里面的要求做完之后还会有很多问题, 下面一一解决.</p>
+<h2>编译问题及解决</h2>
+<p>整个解决方案包含三个项目, 分别是<code>mediastreamer</code>, <code>mediastreamer2</code>和<code>oRTP</code>, 这时候直接启动调试会发现一堆编译错误.</p>
+<h3>启动项设置</h3>
+<p>我们的目标是生成Mediastreamer2.exe用于视频传输的测试, 打开sln之后启动项目是mediastreamer2库项目, 需要把mediastreamer设为启动项目.(右键-&gt;设为启动项目)</p>
+<h3>oRTP问题: 缺失文件</h3>
+<p>oRTP生成过程主要报错</p>
+<blockquote>
+<p>fatal error C1083: 无法打开源文件:“....\src\zrtp.c”: No such file or directory</p>
+</blockquote>
+<p>包括<code>zrtp.c</code>, <code>stun.c</code>等几个文件都提示找不到, 感觉这几个文件应该是移动到mediastreamer2里了, 但是oRTP配置里面没有删. 直接把几个找不到的文件从项目索引里移除.</p>
+<p>另外还有报错</p>
+<blockquote>
+<p>fatal error C1083: 无法打开包括文件:“inttypes.h”: No such file or directory</p>
+</blockquote>
+<p>搜一下发现<code>ortp\include\MSVC</code>目录下面有此文件, 而oRTP项目的附加包含目录里没有这个目录, 添加之. (右键-&gt;属性-&gt;C/C++-&gt;附加包含目录)</p>
+<h3>mediastreamer2问题: 缺失文件</h3>
+<blockquote>
+<p>error C2065: “HAVE_NON_FREE_CODECS”: 未声明的标识符</p>
+</blockquote>
+<p>直接在用的地方先定义一下这个变量, 搜到文件<code>configure.ac</code>里面对这个变量的说明是<code>whether non free codecs are allowed in the build</code>, 这里就定义成<code>0</code>好了...</p>
+<blockquote>
+<p>error C2054: 在“inline”之后应输入“(”
+    error C2085: “payload_header_set”: 不在形参表中</p>
+</blockquote>
+<p>参考 http://blog.csdn.net/wl_fln/article/details/8672782 解决.</p>
+<blockquote>
+<p>fatal error C1083: 无法打开源文件:“....\src\audiofilters\msconf.c”: No such file or directory</p>
+</blockquote>
+<p>好像没有用到这个文件, 直接从项目索引里移除.</p>
+<h3>mediastreamer2问题: 无法解析的外部符号</h3>
+<p>上述问题解决之后, 就会出来五十多个 <code>error LNK2019: 无法解析的外部符号</code>的问题. 这个问题的原因是项目生成lib文件的时候声明了这些函数, 但是没有把他们的实现文件(.c文件)加入到文件索引里.
+我的方法是用<code>grepWin</code>软件在mediastreamer2文件夹内查找到对应函数的实现, 然后在mediastreamer2项目中添加这个文件(右键-&gt;添加-&gt;现有项...)</p>
+<h3>mediastreamer问题: 缺失文件</h3>
+<p>少了<code>common.h</code>等文件, 解决方法同上.</p>
+<h2>运行</h2>
+<p>上述问题都解决之后就可以运行程序了, 注意运行的时候需要添加一些命令行参数, 否则窗口就直接关闭了. 如果想直接用调试模式运行程序, 测试功能, 可以在项目设置里添加参数, (右键-&gt;属性-&gt;调试-&gt;命令参数)
+比如参数 <code>--local 5000 --remote 127.0.0.1:5000 --payload 103</code></p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'potatola'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'Mediastreamer2-compilation';
+                var disqus_url = 'http://potatola.github.io/Mediastreamer2-compilation.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+
+            <li class="list-group-item"><a href="http://potatola.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://git-scm.com/book/zh/v1" target="_blank">
+                git-book
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Geng Yufeng
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://potatola.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://potatola.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://potatola.github.io/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'potatola'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>
