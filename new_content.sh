@@ -18,7 +18,6 @@ read -p "title:" title
 read -p "tags:(tag1[,tags]):" tags
 echo "Title: $title 
 Date: "`date +'%F %T'`"
-Category: $category
 Tags: $tags
 Slug: ${name%.md}" > "content/$category/$name"
 

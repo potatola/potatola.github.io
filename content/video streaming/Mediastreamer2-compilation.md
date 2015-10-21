@@ -1,10 +1,11 @@
 Title: Mediastreamer2-2.11 windows VS2010 编译 
 Date: 2015-10-20 07:23:54
-Category: video streaming
 Tags: video streaming
 Slug: Mediastreamer2-compilation
 
 之前一直在用Linphone软件下的开源库Mediastreamer2-2.8版本做实时视频传输中码率自适应的实验, 在底层oRTP库里面实现了一些自己的算法, 虽说问题不少, 也还算取得了一点成果. 最近准备在FEC冗余保护方面做一些系统实现, 依然选择在Mediastreamer2上做. 不过考虑到社区一直对Linphone进行更新, 可能已经做了很多改进和修复, 所以决定下载最新版本的Mediastreamer2进行实验. 没想到光是编译就用了好几天时间, 自己对Windows程序的编译/链接等过程确实没太多了解, 主要用了低效率的暴力尝试法(瞎试), 这里简单记录下过程.
+
+<!-- PELICAN_END_SUMMARY -->
 
 ## 环境准备
 

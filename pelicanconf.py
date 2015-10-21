@@ -4,8 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Geng Yufeng'
 SITENAME = u"Deadline's Coming"
-SITESUBTITLE = u"I don't need time, I need a deadline."
-SITEURL = 'http://potatola.github.io/'
+SITESUBTITLE = u"Deadline是第一生产力."
+SITEURL = 'http://potatola.github.io'
 
 PATH = 'content'
 USE_FOLDER_AS_CATEGORY = True
@@ -19,6 +19,29 @@ THEME = 'bootstrap3'
 
 DISQUS_SITENAME = 'potatola'
 
+# plugin config
+PLUGIN_PATHS = [u'./pelican-plugins']
+PLUGINS = [
+    u'sitemap',
+    u'summary',
+    u'neighbors',
+]
+
+# sitemap plugin config
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
+    'changefreqs': {
+        'articles': 'weekly',
+        'indexes': 'daily',
+        'pages': 'monthly'
+    }
+}
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -27,14 +50,10 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('git-book', 'http://git-scm.com/book/zh/v1'),)
+#LINKS = (('Github', 'https://github.com/potatola'),)
 
 # Social widget
-# SOCIAL = (('You can add links in your config file', '#'),
-          # ('Another social link', '#'),)
+SOCIAL = (('Github', 'https://github.com/potatola'),)
 
 DEFAULT_PAGINATION = 10
 

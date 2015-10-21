@@ -1,6 +1,5 @@
 Title: Ubuntu挂载动态磁盘NTFS分区失败
 Date: 2014-11-28 14:01:03
-Category: tools
 Tags: ubuntu
 Slug: Ubuntu-mount-NTFS
 

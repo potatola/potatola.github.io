@@ -1,6 +1,5 @@
 Title: 使用Ubuntu的一些问题和解决办法 
 Date: 2014-11-30 14:17:38
-Category: tools
 Tags: Ubuntu
 Slug: Ubuntu-tips
 
