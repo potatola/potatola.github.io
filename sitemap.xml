@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://potatola.github.io/</loc>
-<lastmod>2015-10-21T16:44:17-00:00</lastmod>
+<lastmod>2015-10-21T16:45:31-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://potatola.github.io/archives.html</loc>
-<lastmod>2015-10-21T16:44:17-00:00</lastmod>
+<lastmod>2015-10-21T16:45:31-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://potatola.github.io/tags.html</loc>
-<lastmod>2015-10-21T16:44:17-00:00</lastmod>
+<lastmod>2015-10-21T16:45:31-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://potatola.github.io/categories.html</loc>
-<lastmod>2015-10-21T16:44:17-00:00</lastmod>
+<lastmod>2015-10-21T16:45:31-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,35 +34,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://potatola.github.io/Mediastreamer2-compilation.html</loc>
 <lastmod>2015-10-20T07:23:54+08:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://potatola.github.io/intel-i-suffix.html</loc>
 <lastmod>2014-12-04T19:00:19+08:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://potatola.github.io/Ubuntu-tips.html</loc>
 <lastmod>2014-11-30T14:17:38+08:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://potatola.github.io/Ubuntu-mount-NTFS.html</loc>
 <lastmod>2014-11-28T14:01:03+08:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://potatola.github.io/setup-pelican-github.html</loc>
 <lastmod>2014-11-24T13:23:21+08:00</lastmod>
-<changefreq>monthly</changefreq>
+<changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
