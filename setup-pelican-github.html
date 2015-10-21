@@ -123,8 +123,6 @@ Deadline's Coming            </a>
 <p>在你想要存放本地Pelican文件夹的地方新建文件夹(比如<code>Pelican</code>), 运行<code>cmd</code>进入该目录. 执行</p>
 <div class="highlight"><pre>    pelican-quickstart
 </pre></div>
-
-
 <p>回答一系列问题(除了基本信息以外其他都可以直接回车用默认设置, 后面还可以改). 这样就在<code>Pelican</code>目录中建立了基本的Pelican文件框架.</p>
 <h2>写第一个Blog页面</h2>
 <p>用任意文本编辑器新建一个文本文件, 内容为(举例):</p>
@@ -134,14 +132,10 @@ Deadline's Coming            </a>
 
     Following is a review of my favorite mechanical keyboard.
 </pre></div>
-
-
 <p>保存在<code>Pelican/content/keyboard-review.md</code>
 接下来在项目根目录下(<code>Pelican</code>目录)执行</p>
 <div class="highlight"><pre>    pelican content
 </pre></div>
-
-
 <p>就成功建立了第一篇博文.</p>
 <h1>发布网页到Github Pages</h1>
 <h2>新建Repository</h2>
@@ -153,27 +147,21 @@ Content from the master branch will be used to build and publish your GitHub Pag
 <h2>发布网页</h2>
 <p>打开<code>git bash</code>命令行窗口, 切换到Pelican根目录, 执行以下命里初始化Git Repo</p>
 <div class="highlight"><pre>git init
-git commit -m <span class="s1">&#39;init&#39;</span>
+git commit -m <span class="s1">'init'</span>
 git remote add origin git@github.com:<span class="o">{</span>username<span class="o">}</span>/<span class="o">{</span>username<span class="o">}</span>.github.io.git
 </pre></div>
-
-
 <p>利用<code>ghp-import</code>工具发布网页</p>
 <div class="highlight"><pre>git branch gh-pages <span class="c">#只有第一次需要执行</span>
 ghp-import -b master -p output <span class="c">#-b master指定分支为master(用于personal page), -p直接尝试push</span>
 </pre></div>
-
-
 <p>这样就可以通过访问 <code>{username}.github.io</code> 访问博客网页了. 话说我第一次上传后等了十几分钟也没出现, 不得已把Repo删了重新上传一遍, 过了一会就有了...之前搞Octopress也是这样, 简直逼疯.</p>
 <h2>存档项目到git</h2>
 <p>为了能够在不同电脑上同步自己的Pelican, 我们顺便把整个Pelican目录同步到这个Repository里面, 只要新建一个分支就好了, 在Pelican根目录下执行</p>
 <div class="highlight"><pre>git checkout -b <span class="nb">source</span>
 git add .
-git commit -m <span class="s1">&#39;first commit&#39;</span>
+git commit -m <span class="s1">'first commit'</span>
 git push origin <span class="nb">source</span>
 </pre></div>
-
-
 <h1>进阶功能</h1>
 <h2>安装主题</h2>
 <ol>
@@ -181,15 +169,11 @@ git push origin <span class="nb">source</span>
 <p>网上搜索到喜欢的Pelican主题之后(比如我使用的<a href="https://github.com/DandyDev/pelican-bootstrap3">bootstrap3</a>, 把主题下载到某个目录.</p>
 <div class="highlight"><pre>git clone https://github.com/DandyDev/pelican-bootstrap3.git /path/to/bs3
 </pre></div>
-
-
 </li>
 <li>
 <p>安装主题到Pelican中</p>
 <div class="highlight"><pre>pelican-themes --install /path/to/bs3
 </pre></div>
-
-
 </li>
 <li>
 <p>指定Pelican使用该主题(这里要注意上一步安装完并不代表会使用这个主题), 即修改配置文件<code>pelicanconf.py</code>中的<code>THEME</code>字段(或新建该字段)指向要使用的主题<code>/path/to/bs3</code></p>
@@ -199,25 +183,21 @@ git push origin <span class="nb">source</span>
 <p>我们希望博客内容改动后能用一个脚本自动把改动内容上传到Git上, 避免输入上面几条很长的git命令, 可以用以下脚本实现:</p>
 <p>上传网站</p>
 <div class="highlight"><pre><span class="k">if</span> <span class="o">[</span> <span class="nv">$# </span><span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&quot;don&#39;t forget the commit description&quot;</span>
+    <span class="nb">echo</span> <span class="s2">"don't forget the commit description"</span>
     <span class="nb">exit </span>0
 <span class="k">fi</span>
 pelican content -s pelicanconf.py
-ghp-import -b master -m <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> output
+ghp-import -b master -m <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> output
 git push origin master:master -f <span class="c"># -f表示用本地分支强制覆盖远程分支, 在多地同步的时候可能会用到</span>
 </pre></div>
-
-
 <p>同步源代码</p>
 <div class="highlight"><pre><span class="k">if</span> <span class="nv">$# </span><span class="o">==</span> 0:
-    <span class="nb">echo</span> <span class="s2">&quot;don&#39;t forget the commit description&quot;</span>
+    <span class="nb">echo</span> <span class="s2">"don't forget the commit description"</span>
     <span class="nb">exit </span>0
 git add .
 git commit -m <span class="nv">$1</span>
 git push origin <span class="nb">source</span>
 </pre></div>
-
-
 <h1>遗留问题</h1>
 <ol>
 <li>
