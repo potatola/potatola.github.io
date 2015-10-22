@@ -217,14 +217,19 @@ git push origin master:master -f <span class="c"># -f表示用本地分支强制
 </td></tr></table>
 
 <p>同步源代码</p>
-<div class="highlight"><pre><span class="k">if</span> <span class="nv">$# </span><span class="o">==</span> 0:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">if</span> <span class="nv">$# </span><span class="o">==</span> 0:
     <span class="nb">echo</span> <span class="s2">&quot;don&#39;t forget the commit description&quot;</span>
     <span class="nb">exit </span>0
 git add .
 git commit -m <span class="nv">$1</span>
 git push origin <span class="nb">source</span>
 </pre></div>
-
+</td></tr></table>
 
 <h1>遗留问题</h1>
 <ol>
