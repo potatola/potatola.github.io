@@ -5,29 +5,36 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://potatola.github.io/</loc>
-<lastmod>2015-10-22T21:33:11-00:00</lastmod>
+<lastmod>2015-10-22T22:26:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://potatola.github.io/archives.html</loc>
-<lastmod>2015-10-22T21:33:11-00:00</lastmod>
+<lastmod>2015-10-22T22:26:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://potatola.github.io/tags.html</loc>
-<lastmod>2015-10-22T21:33:11-00:00</lastmod>
+<lastmod>2015-10-22T22:26:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://potatola.github.io/categories.html</loc>
-<lastmod>2015-10-22T21:33:11-00:00</lastmod>
+<lastmod>2015-10-22T22:26:11-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://potatola.github.io/cv-template.html</loc>
+<lastmod>2015-10-22T13:50:35+08:00</lastmod>
+<changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -75,7 +82,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://potatola.github.io/category/tools.html</loc>
-<lastmod>2014-11-30T14:17:38+08:06</lastmod>
+<lastmod>2015-10-22T13:50:35+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -95,13 +102,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://potatola.github.io/tag/video-streaming.html</loc>
-<lastmod>2015-10-20T07:23:54+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>http://potatola.github.io/tag/ubuntu.html</loc>
 <lastmod>2014-11-30T14:17:38+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -109,8 +109,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://potatola.github.io/author/geng-yufeng.html</loc>
+<loc>http://potatola.github.io/tag/cv.html</loc>
+<lastmod>2015-10-22T13:50:35+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://potatola.github.io/tag/video-streaming.html</loc>
 <lastmod>2015-10-20T07:23:54+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://potatola.github.io/author/geng-yufeng.html</loc>
+<lastmod>2015-10-22T13:50:35+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

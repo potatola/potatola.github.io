@@ -200,7 +200,13 @@ git push origin <span class="nb">source</span>
 <h2>自动部署修改</h2>
 <p>我们希望博客内容改动后能用一个脚本自动把改动内容上传到Git上, 避免输入上面几条很长的git命令, 可以用以下脚本实现:</p>
 <p>上传网站</p>
-<div class="highlight"><pre><span class="k">if</span> <span class="o">[</span> <span class="nv">$# </span><span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">if</span> <span class="o">[</span> <span class="nv">$# </span><span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     <span class="nb">echo</span> <span class="s2">&quot;don&#39;t forget the commit description&quot;</span>
     <span class="nb">exit </span>0
 <span class="k">fi</span>
@@ -208,7 +214,7 @@ pelican content -s pelicanconf.py
 ghp-import -b master -m <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> output
 git push origin master:master -f <span class="c"># -f表示用本地分支强制覆盖远程分支, 在多地同步的时候可能会用到</span>
 </pre></div>
-
+</td></tr></table>
 
 <p>同步源代码</p>
 <div class="highlight"><pre><span class="k">if</span> <span class="nv">$# </span><span class="o">==</span> 0:
