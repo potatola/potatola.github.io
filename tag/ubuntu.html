@@ -85,12 +85,10 @@ Deadline's Coming            </a>
             <hr/>
             <article>
                 <h2><a href="http://potatola.github.io/Ubuntu-mount-NTFS.html">Ubuntu挂载动态磁盘NTFS分区失败</a></h2>
-                <div class="summary"><h1>Summary</h1>
-<p>如果刚刚从windows安装为Ubuntu, 之后发现整块磁盘上, 只有一个分区无法挂载, 提示<code>Error mounting : mount exited with exit code 12: Failed to read last sector</code> 以及 <code>Volume is corrupt, run chkdsk</code> 一类错误的问题, 有一个可能的原因, 就是:</p>
+                <div class="summary"><p>如果刚刚从windows安装为Ubuntu, 之后发现整块磁盘上, 只有一个分区无法挂载, 提示<code>Error mounting : mount exited with exit code 12: Failed to read last sector</code> 以及 <code>Volume is corrupt, run chkdsk</code> 一类错误的问题, 有一个可能的原因, 就是:</p>
 <p><strong>在windows下使用了动态磁盘分区, 并且有的分区占据了不连续的物理位置, 那么这个分区就会出现挂载失败的情况</strong></p>
 <p>我的解决办法是, **重新进入windows系统(可能需要重装一个), 在windows下是能看到之前的这个分区的, 但是会显示成两个重名的分区(应该是不同物理位置各显示为一个), 执行 <code>chkdsk e: /f</code>('e:'是我那个有问题的盘的盘符), 等待修复完, 就能至少恢复大部分的数据了.</p>
-<h1>不作死就不会死前奏</h1>
-<p>作为一个程序猿, 每次别人第一次听到我的专业, 第一反应就是"啊, 太好了 ...</p>
+
                     <a class="btn btn-default btn-xs" href="http://potatola.github.io/Ubuntu-mount-NTFS.html">more ...</a>
                 </div>
             </article>
