@@ -9,6 +9,8 @@ Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了
 
 为了体现一个计算机渣硕的专业技能, 决定不看网上各种教程, 自己对照官方文档安装(‘▽′)/  
 
+<!-- PELICAN_END_SUMMARY -->
+
 # 安装Pelican及相关软件(Windows 7)
 为了完成目标我们需要用到一些依赖软件, 比如`python` `pip` `git` 等, 简单说下.
 
@@ -100,7 +102,7 @@ Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了
 
 上传网站
 
-    :::sh
+    #!sh
     if [ $# == 0 ]; then
         echo "don't forget the commit description"
         exit 0
@@ -111,7 +113,7 @@ Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了
 
 同步源代码
     
-    :::sh
+    #!sh
     if $# == 0:
         echo "don't forget the commit description"
         exit 0

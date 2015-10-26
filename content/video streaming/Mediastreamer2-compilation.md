@@ -62,6 +62,17 @@ oRTP生成过程主要报错
 上述问题解决之后, 就会出来五十多个 `error LNK2019: 无法解析的外部符号`的问题. 这个问题的原因是项目生成lib文件的时候声明了这些函数, 但是没有把他们的实现文件(.c文件)加入到文件索引里.
 我的方法是用`grepWin`软件在mediastreamer2文件夹内查找到对应函数的实现, 然后在mediastreamer2项目中添加这个文件(右键->添加->现有项...)
 
+注意类似下面的几条日志需要特殊处理:
+
+>	msvolume.obj : error LNK2019: 无法解析的外部符号 __imp__ortp_extremum_init，该符号在函数 _volume_init 中被引用
+
+对应函数`ortp_extremum_init`要在oRTP项目中搜索相应.c文件并添加到ortp项目文件索引里.
+
+>	2>msvoip.obj : error LNK2001: 无法解析的外部符号 _ms_snow_enc_desc
+	2>msvoip.obj : error LNK2001: 无法解析的外部符号 _ms_conf_desc
+
+是因为定义它们的文件`videoenc.c`中, 相关代码被`#ifdef`部分屏蔽掉了. 我感觉这几个函数应该没用到, 直接在`viopdescs.h`文件里把相关声明删除了.
+
 ### mediastreamer问题: 缺失文件
 
 少了`common.h`等文件, 解决方法同上.
