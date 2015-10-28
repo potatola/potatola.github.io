@@ -15,7 +15,11 @@ TIMEZONE = 'Asia/Shanghai'
 DEFAULT_LANG = u'en'
 
 #themes
-THEME = 'bootstrap3'
+THEME = 'pelican-bootstrap3'
+USE_PAGER = True
+DISPLAY_TAGS_ON_SIDEBAR = True
+DISPLAY_TAGS_INLINE = True
+DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
 
 DISQUS_SITENAME = 'potatola'
 
@@ -25,6 +29,8 @@ PLUGINS = [
     u'sitemap',
     u'summary',
     u'neighbors',
+    u'related_posts',
+    u'tag_cloud',
 ]
 
 # sitemap plugin config

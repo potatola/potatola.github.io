@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"
->
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
     <title>Pelican - Deadline's Coming</title>
     <!-- Using the latest rendering mode for IE -->
@@ -30,11 +29,14 @@
     <link rel="stylesheet" href="http://potatola.github.io/theme/css/style.css" type="text/css"/>
 
 
+
+
+
 </head>
 <body>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+	<div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -69,7 +71,6 @@ Deadline's Coming            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-
             <article>
                 <h2><a href="http://potatola.github.io/setup-pelican-github.html">Github pages和Pelican搭建静态博客</a></h2>
                 <div class="summary"><p>Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了, 因为对Ruby实在是一无所知, 在安装过程中遇到各种Bug只能疯狂google, 照搬别人的解决方案. 另外在我安装自定义主题的时候有很多不满意的地方都不太清楚怎么修改. 如果用了别人的东西写博客却连原理是什么都不知道, 就有点怂了.</p>
@@ -93,12 +94,43 @@ Deadline's Coming            </a>
               </ul>
             </li>
 
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="http://potatola.github.io/setup-pelican-github.html">
+                            Github pages和Pelican搭建静态博客
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
 
             <li class="list-group-item"><a href="http://potatola.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group " id="tags">
+                <ul class="list-group list-inline tagcloud" id="tags">
+                    <li class="list-group-item tag-4">
+                        <a href="http://potatola.github.io/tag/cv.html">
+                            CV
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://potatola.github.io/tag/pelican.html">
+                            Pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="http://potatola.github.io/tag/ubuntu.html">
+                            Ubuntu
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://potatola.github.io/tag/video-streaming.html">
+                            video streaming
+                        </a>
+                    </li>
                 </ul>
             </li>
+
+
     </ul>
 </section>
             </aside>
