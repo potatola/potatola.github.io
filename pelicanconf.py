@@ -16,10 +16,10 @@ DEFAULT_LANG = u'en'
 
 #themes
 THEME = 'pelican-bootstrap3'
-USE_PAGER = True
 DISPLAY_TAGS_ON_SIDEBAR = True
 DISPLAY_TAGS_INLINE = True
 DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
+DEFAULT_PAGINATION = 5
 
 DISQUS_SITENAME = 'potatola'
 
@@ -61,7 +61,6 @@ AUTHOR_FEED_RSS = None
 # Social widget
 SOCIAL = (('Github', 'https://github.com/potatola'),)
 
-DEFAULT_PAGINATION = 10
 
 # code blocks with line numbers
 PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
