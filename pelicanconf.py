@@ -23,6 +23,7 @@ DEFAULT_PAGINATION = 5
 FAVICON = 'images/favicon.ico'
 
 DISQUS_SITENAME = 'potatola'
+GOOGLE_ANALYTICS = 'UA-70409451-1'
 
 # plugin config
 PLUGIN_PATHS = [u'./pelican-plugins']
