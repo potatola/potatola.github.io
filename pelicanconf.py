@@ -14,6 +14,9 @@ TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = u'en'
 
+STATIC_PATHS = ['images', 'extra/CNAME']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+
 #themes
 THEME = 'pelican-bootstrap3'
 DISPLAY_TAGS_ON_SIDEBAR = True
