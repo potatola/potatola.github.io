@@ -31,23 +31,23 @@ Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了
 ## 新建一个Pelican目录
 在你想要存放本地Pelican文件夹的地方新建文件夹(比如`Pelican`), 运行`cmd`进入该目录. 执行
 
-        pelican-quickstart
+    pelican-quickstart
         
 回答一系列问题(除了基本信息以外其他都可以直接回车用默认设置, 后面还可以改). 这样就在`Pelican`目录中建立了基本的Pelican文件框架.
 
 ## 写第一个Blog页面
 用任意文本编辑器新建一个文本文件, 内容为(举例):
 
-        Title: My First Review
-        Date: 2010-12-03 10:20
-        Category: Review
+    Title: My First Review
+    Date: 2010-12-03 10:20
+    Category: Review
 
-        Following is a review of my favorite mechanical keyboard.
+    Following is a review of my favorite mechanical keyboard.
         
 保存在`Pelican/content/keyboard-review.md`
 接下来在项目根目录下(`Pelican`目录)执行
 
-        pelican content
+    pelican content
 
 就成功建立了第一篇博文.
 
@@ -89,11 +89,11 @@ Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了
 ## 安装主题
 1. 网上搜索到喜欢的Pelican主题之后(比如我使用的[bootstrap3](https://github.com/DandyDev/pelican-bootstrap3), 把主题下载到某个目录.
 
-        git clone https://github.com/DandyDev/pelican-bootstrap3.git /path/to/bs3
+    git clone https://github.com/DandyDev/pelican-bootstrap3.git /path/to/bs3
         
 2. 安装主题到Pelican中
 
-        pelican-themes --install /path/to/bs3
+    pelican-themes --install /path/to/bs3
         
 3. 指定Pelican使用该主题(这里要注意上一步安装完并不代表会使用这个主题), 即修改配置文件`pelicanconf.py`中的`THEME`字段(或新建该字段)指向要使用的主题`/path/to/bs3`
 
@@ -102,26 +102,22 @@ Octopress刚刚安装完, 我这个败家玩意就开始想换一个生成器了
 
 上传网站
 
-    #!sh
-    if [ $# == 0 ]; then
-        echo "don't forget the commit description"
-        exit 0
-    fi
+    :::sh
+    read -p "input comment:" comment
     pelican content -s pelicanconf.py
-    ghp-import -b master -m "$1" output
-    git push origin master:master -f # -f表示用本地分支强制覆盖远程分支, 在多地同步的时候可能会用到
+    ghp-import -b master -m "$comment" output
+    git push origin master:master -f #-f: force push
 
 同步源代码
     
-    #!sh
-    if $# == 0:
-        echo "don't forget the commit description"
-        exit 0
-    git add .
-    git commit -m $1
+    :::sh
+    read -p "input comment:" comment
+    git add -A .
+    git commit -m "$comment"
+    git pull
     git push origin source
     
-# 遗留问题
+# BUG
 1. 代码高亮功能, 如果是在一个列表条目下面就会失效, 比如下面这个
 
     :::sh

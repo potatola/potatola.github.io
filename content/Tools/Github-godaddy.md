@@ -8,7 +8,7 @@ Slug: GitHub-pages-godaddy
 为GitHub pages位置自定义域名主要操作包括:
 
 1. godaddy购买域名
-1. 在Pelican中指定CNAME文件
+1. 在Pelican中配置CNAME文件
 1. 在godaddy配置域名
 1. 等待DNS生效
 
@@ -19,13 +19,13 @@ Slug: GitHub-pages-godaddy
 - 注册 [godaddy](https://www.godaddy.com/) 用户
 - 搜索想要的域名, 只要列出来的都是可以使用的, 下单付费即可.
 
-# 在Pelican中指定CNAME文件
+# 在Pelican中配置CNAME文件
 
 - 要在GitHub Pages中使用自定义域名, 需要在相关repository中添加`CNAME`文件, 文件内容为自己的域名(`gengyf.com`). 因为我们的内容使用Pelican生成的, 所以这一步需要在Pelican中配置.
 - 新建`content/extra`目录, 在其中添加上述`CNAME`文件. 在Pelican的配置文件(`pelicanconf.py`)中增加如下内容:
 
->	STATIC_PATHS = ['images', 'extra/CNAME']
->	EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+		STATIC_PATHS = ['images', 'extra/CNAME']
+		EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
 # 在godaddy配置域名
 
@@ -43,5 +43,6 @@ Slug: GitHub-pages-godaddy
 
 >	#参考内容
 >
->	- [Setting up a custom domain with GitHub Pages](https://help.GitHub.com/articles/setting-up-a-custom-domain-with-GitHub-pages/) 
+>	- [Setting up a custom domain with GitHub Pages](https://help.GitHub.com/articles/setting-up-a-custom-domain-with-GitHub-pages/)
+>	- [pelican tips](http://docs.getpelican.com/en/3.6.3/tips.html#extra-tips) 
 >	- [Configuring a Godaddy domain name with GitHub pages](http://andrewsturges.com/blog/jekyll/tutorial/2014/11/06/GitHub-and-godaddy.html)
