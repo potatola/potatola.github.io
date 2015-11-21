@@ -206,15 +206,15 @@ git push origin master:master -f <span class="c">#-f: force push</span>
 
 
 <p>同步源代码</p>
-<div class="highlight"><pre>git pull
-<span class="nb">read</span> -p <span class="s2">&quot;input comment:&quot;</span> comment
+<div class="highlight"><pre><span class="nb">read</span> -p <span class="s2">&quot;input comment:&quot;</span> comment
 git add -A .
 git commit -m <span class="s2">&quot;</span><span class="nv">$comment</span><span class="s2">&quot;</span>
+git pull
 git push origin <span class="nb">source</span>
 </pre></div>
 
 
-<h1>遗留问题</h1>
+<h1>BUG</h1>
 <ol>
 <li>
 <p>代码高亮功能, 如果是在一个列表条目下面就会失效, 比如下面这个</p>

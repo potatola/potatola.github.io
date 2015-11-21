@@ -13,13 +13,13 @@
 <link rel="canonical" href="http://potatola.github.io/GitHub-pages-godaddy.html">
 
         <meta name="author" content="Geng Yufeng" />
-        <meta name="description" content="用Pelican和Github pages搭静态博客还是很方便的, 美中不足是默认只能使用XXX.GitHub.io这样比较Geek的域名. Github提供了自定义域名的设置, 可以很容易地为个人博客设定自定义域名. 而要买域名就去godaddy上剁手吧. 为GitHub pages位置自定义域名主要操作包括: godaddy购买域名 在Pelican中配置CNAME文件 在godaddy配置域名 等待DNS生效" />
+        <meta name="description" content="用Pelican和Github pages搭静态博客还是很方便的, 美中不足是默认只能使用 XXX.GitHub.io 这样比较Geek的域名. Github提供了自定义域名的设置, 可以很容易地为个人博客设定自定义域名. 而要买域名就去godaddy上剁手吧. 为GitHub pages位置自定义域名主要操作包括: godaddy购买域名 在Pelican中配置CNAME文件 在godaddy配置域名 等待DNS生效" />
 
         <meta property="og:site_name" content="Deadline's Coming" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="为Pelican+GitHub pages搭建的静态博客 添加godaddy域名"/>
         <meta property="og:url" content="http://potatola.github.io/GitHub-pages-godaddy.html"/>
-        <meta property="og:description" content="用Pelican和Github pages搭静态博客还是很方便的, 美中不足是默认只能使用XXX.GitHub.io这样比较Geek的域名. Github提供了自定义域名的设置, 可以很容易地为个人博客设定自定义域名. 而要买域名就去godaddy上剁手吧. 为GitHub pages位置自定义域名主要操作包括: godaddy购买域名 在Pelican中配置CNAME文件 在godaddy配置域名 等待DNS生效"/>
+        <meta property="og:description" content="用Pelican和Github pages搭静态博客还是很方便的, 美中不足是默认只能使用 XXX.GitHub.io 这样比较Geek的域名. Github提供了自定义域名的设置, 可以很容易地为个人博客设定自定义域名. 而要买域名就去godaddy上剁手吧. 为GitHub pages位置自定义域名主要操作包括: godaddy购买域名 在Pelican中配置CNAME文件 在godaddy配置域名 等待DNS生效"/>
         <meta property="article:published_time" content="2015-11-20" />
             <meta property="article:section" content="Tools" />
             <meta property="article:author" content="Geng Yufeng" />
@@ -102,7 +102,7 @@ Deadline's Coming            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>用Pelican和Github pages搭静态博客还是很方便的, 美中不足是默认只能使用<code>XXX.GitHub.io</code>这样比较Geek的域名. Github提供了自定义域名的设置, 可以很容易地为个人博客设定自定义域名. 而要买域名就去godaddy上剁手吧.</p>
+                <p>用Pelican和Github pages搭静态博客还是很方便的, 美中不足是默认只能使用 XXX.GitHub.io 这样比较Geek的域名. Github提供了自定义域名的设置, 可以很容易地为个人博客设定自定义域名. 而要买域名就去godaddy上剁手吧.</p>
 <p>为GitHub pages位置自定义域名主要操作包括:</p>
 <ol>
 <li>godaddy购买域名</li>
@@ -120,10 +120,11 @@ Deadline's Coming            </a>
 <h1>在Pelican中配置CNAME文件</h1>
 <ul>
 <li>要在GitHub Pages中使用自定义域名, 需要在相关repository中添加<code>CNAME</code>文件, 文件内容为自己的域名(<code>gengyf.com</code>). 因为我们的内容使用Pelican生成的, 所以这一步需要在Pelican中配置.</li>
-<li>
-<p>新建<code>content/extra</code>目录, 在其中添加上述<code>CNAME</code>文件. 在Pelican的配置文件(<code>pelicanconf.py</code>)中增加如下内容:</p>
-<p>STATIC_PATHS = ['images', 'extra/CNAME']
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}</p>
+<li>新建<code>content/extra</code>目录, 在其中添加上述<code>CNAME</code>文件. 在Pelican的配置文件(<code>pelicanconf.py</code>)中增加如下内容:<div class="highlight"><pre>STATIC_PATHS = [&#39;images&#39;, &#39;extra/CNAME&#39;]
+EXTRA_PATH_METADATA = {&#39;extra/CNAME&#39;: {&#39;path&#39;: &#39;CNAME&#39;},}
+</pre></div>
+
+
 </li>
 </ul>
 <h1>在godaddy配置域名</h1>
@@ -142,8 +143,8 @@ EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}</p>
 <blockquote>
 <p>#参考内容</p>
 <ul>
-<li><a href="https://help.GitHub.com/articles/setting-up-a-custom-domain-with-GitHub-pages/">Setting up a custom domain with GitHub Pages</a> </li>
-<li><a href="http://docs.getpelican.com/en/3.6.3/tips.html#extra-tips">Pelican Tips</a></li>
+<li><a href="https://help.GitHub.com/articles/setting-up-a-custom-domain-with-GitHub-pages/">Setting up a custom domain with GitHub Pages</a></li>
+<li><a href="http://docs.getpelican.com/en/3.6.3/tips.html#extra-tips">pelican tips</a> </li>
 <li><a href="http://andrewsturges.com/blog/jekyll/tutorial/2014/11/06/GitHub-and-godaddy.html">Configuring a Godaddy domain name with GitHub pages</a></li>
 </ul>
 </blockquote>
