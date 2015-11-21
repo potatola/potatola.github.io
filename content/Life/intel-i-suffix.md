@@ -1,6 +1,6 @@
 Title: Intel i系列CPU后缀Y/U/M/H/Q的含义
 Date: 2014-12-04 19:00:19
-Tags: 
+Tags: Goods
 Slug: intel-i-suffix
 
 

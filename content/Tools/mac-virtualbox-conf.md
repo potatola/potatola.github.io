@@ -1,6 +1,6 @@
 Title: Mac使用virtualbox: 分辨率调整, command快捷键映射control
 Date: 2015-11-14 11:29:32
-Tags: 
+Tags: OS
 Slug: mac-virtualbox-conf
 
 最近在mac系统下使用virtualbox安装了CentOS系统进行实验, 中间遇到了CentOS系统中分辨率无法调整, 无法使用CMD+C和CMD+V等组合键等问题. 解决方法都很简单, 仅作下记录.

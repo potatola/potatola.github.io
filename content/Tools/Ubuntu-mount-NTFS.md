@@ -1,6 +1,6 @@
 Title: Ubuntu挂载动态磁盘NTFS分区失败
 Date: 2014-11-28 14:01:03
-Tags: ubuntu
+Tags: OS
 Slug: Ubuntu-mount-NTFS
 
 如果刚刚从windows安装为Ubuntu, 之后发现整块磁盘上, 只有一个分区无法挂载, 提示`Error mounting : mount exited with exit code 12: Failed to read last sector` 以及 `Volume is corrupt, run chkdsk` 一类错误的问题, 有一个可能的原因, 就是:
