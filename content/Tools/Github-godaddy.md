@@ -1,6 +1,6 @@
 Title: 为Pelican+GitHub pages搭建的静态博客 添加godaddy域名
 Date: 2015-11-20 21:13:52
-Tags: GitHub
+Tags: GitHub, Blog
 Slug: GitHub-pages-godaddy
 
 用Pelican和Github pages搭静态博客还是很方便的, 美中不足是默认只能使用 XXX.GitHub.io 这样比较Geek的域名. Github提供了自定义域名的设置, 可以很容易地为个人博客设定自定义域名. 而要买域名就去godaddy上剁手吧.
