@@ -58,11 +58,8 @@ AUTHOR_FEED_RSS = None
 #LINKS = (('Github', 'https://github.com/potatola'),)
 
 # Social widget
-SOCIAL = (('Github', 'https://github.com/potatola'),)
-
-
-# code blocks with line numbers
-PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
+SOCIAL = (('Github', 'https://github.com/potatola'),
+	('LinkedIn', 'https://cn.linkedin.com/in/yufeng-geng-a643b27b'),)
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
