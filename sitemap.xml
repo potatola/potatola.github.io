@@ -4,161 +4,161 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://potatola.github.io/</loc>
-<lastmod>2015-11-23T13:03:49-00:00</lastmod>
+<loc>http://gengyf.com/</loc>
+<lastmod>2015-11-25T21:08:50-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/archives.html</loc>
-<lastmod>2015-11-23T13:03:49-00:00</lastmod>
+<loc>http://gengyf.com/archives.html</loc>
+<lastmod>2015-11-25T21:08:50-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/tags.html</loc>
-<lastmod>2015-11-23T13:03:49-00:00</lastmod>
+<loc>http://gengyf.com/tags.html</loc>
+<lastmod>2015-11-25T21:08:50-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/categories.html</loc>
-<lastmod>2015-11-23T13:03:49-00:00</lastmod>
+<loc>http://gengyf.com/categories.html</loc>
+<lastmod>2015-11-25T21:08:50-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/GitHub-pages-godaddy.html</loc>
+<loc>http://gengyf.com/GitHub-pages-godaddy.html</loc>
 <lastmod>2015-11-20T21:13:52+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/mac-virtualbox-conf.html</loc>
+<loc>http://gengyf.com/mac-virtualbox-conf.html</loc>
 <lastmod>2015-11-14T11:29:32+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/cv-template.html</loc>
+<loc>http://gengyf.com/cv-template.html</loc>
 <lastmod>2015-10-22T13:50:35+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/Mediastreamer2-compilation.html</loc>
+<loc>http://gengyf.com/Mediastreamer2-compilation.html</loc>
 <lastmod>2015-10-20T07:23:54+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/intel-i-suffix.html</loc>
+<loc>http://gengyf.com/intel-i-suffix.html</loc>
 <lastmod>2014-12-04T19:00:19+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/Ubuntu-tips.html</loc>
+<loc>http://gengyf.com/Ubuntu-tips.html</loc>
 <lastmod>2014-11-30T14:17:38+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/Ubuntu-mount-NTFS.html</loc>
+<loc>http://gengyf.com/Ubuntu-mount-NTFS.html</loc>
 <lastmod>2014-11-28T14:01:03+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/setup-pelican-github.html</loc>
+<loc>http://gengyf.com/setup-pelican-github.html</loc>
 <lastmod>2014-11-24T13:23:21+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/category/life.html</loc>
+<loc>http://gengyf.com/category/life.html</loc>
 <lastmod>2014-12-04T19:00:19+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/category/tools.html</loc>
+<loc>http://gengyf.com/category/tools.html</loc>
 <lastmod>2015-11-20T21:13:52+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/category/video-streaming.html</loc>
+<loc>http://gengyf.com/category/video-streaming.html</loc>
 <lastmod>2015-10-20T07:23:54+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/tag/github.html</loc>
+<loc>http://gengyf.com/tag/github.html</loc>
 <lastmod>2015-11-20T21:13:52+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/tag/video-streaming.html</loc>
+<loc>http://gengyf.com/tag/video-streaming.html</loc>
 <lastmod>2015-10-20T07:23:54+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/tag/coding.html</loc>
+<loc>http://gengyf.com/tag/coding.html</loc>
 <lastmod>2015-10-20T07:23:54+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/tag/blog.html</loc>
+<loc>http://gengyf.com/tag/blog.html</loc>
 <lastmod>2015-11-20T21:13:52+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/tag/goods.html</loc>
+<loc>http://gengyf.com/tag/goods.html</loc>
 <lastmod>2014-12-04T19:00:19+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/tag/os.html</loc>
+<loc>http://gengyf.com/tag/os.html</loc>
 <lastmod>2015-11-14T11:29:32+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/tag/cv.html</loc>
+<loc>http://gengyf.com/tag/cv.html</loc>
 <lastmod>2015-10-22T13:50:35+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://potatola.github.io/author/geng-yufeng.html</loc>
+<loc>http://gengyf.com/author/geng-yufeng.html</loc>
 <lastmod>2015-11-20T21:13:52+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
