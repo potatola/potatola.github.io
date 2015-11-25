@@ -3,9 +3,9 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Geng Yufeng'
-SITENAME = u"Deadline's Coming"
+SITENAME = u"GYF"
 SITESUBTITLE = u"Deadline是第一生产力."
-SITEURL = 'http://potatola.github.io'
+SITEURL = 'http://gengyf.com'
 
 PATH = 'content'
 USE_FOLDER_AS_CATEGORY = True
