@@ -73,6 +73,34 @@ GYF            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="http://gengyf.com/section-number.html">Pelican插件: 为文章添加章节编号(section number)</a></h2>
+                <div class="summary"><h1>1 Section number</h1>
+<p>插件根据文章章节标题(<code>h1</code>/<code>h2</code>等), 为所有文章添加章节编号.</p>
+<p>可以在设置文件中增加变量<code>SECTION_NUMBER_MAX</code>来设置最大编号层数, 默认<code>SECTION_NUMBER_MAX = 3</code>.</p>
+<h1>2 注意</h1>
+<p>插件默认第一次出现的标题作为最顶层章节, 例如第一次出现<code>h2</code>, 则<code>h2</code>作为顶层章节开始编号.</p>
+<h1>3 以下是测试样例</h1>
+<h2>3.1 二级标题</h2>
+<p>段落内容</p>
+<h3>3.1.1 三级标题</h3>
+<p>段落内容</p>
+<h4>四级标题</h4>
+<p>段落内容</p>
+<h5>五级标题</h5>
+<p>段落内容</p>
+<h5>五级标题</h5>
+<p>段落内容</p>
+<h2>3.2 二级标题</h2>
+<p>段落内容</p>
+<h4>四级标题</h4>
+<p>段落内容</p>
+<h4>四级标题</h4>
+<p>段落内容</p>
+                    <a class="btn btn-default btn-xs" href="http://gengyf.com/section-number.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://gengyf.com/GitHub-pages-godaddy.html">为Pelican+GitHub pages搭建的静态博客 添加godaddy域名</a></h2>
                 <div class="summary"><p>用Pelican和Github pages搭静态博客还是很方便的, 美中不足是默认只能使用 XXX.GitHub.io 这样比较Geek的域名. Github提供了自定义域名的设置, 可以很容易地为个人博客设定自定义域名. 而要买域名就去godaddy上剁手吧.</p>
 <p>为GitHub pages位置自定义域名主要操作包括:</p>
@@ -98,7 +126,7 @@ GYF            </a>
             <article>
                 <h2><a href="http://gengyf.com/cv-template.html">CV template of a programmer graduate</a></h2>
                 <div class="summary"><p>参考网上资源, 结合自己的需求进行一定改进, 做了一个Latex简历模板, 自己感觉还是比较简洁美观的. 当然简历好看是一方面, 最主要的还是有没有干货(也是我简历比较弱的部分= =)</p>
-<h3>简单说明</h3>
+<h3>1 简单说明</h3>
 <p>模板定义了三种不同类型的内容, 都在<code>resume.cls</code>文件中, 包括:</p>
 <ul>
 <li><code>rSection</code>: 一级栏目, 如"教育", "项目"等</li>
@@ -112,12 +140,12 @@ GYF            </a>
             <hr/>
             <article>
                 <h2><a href="http://gengyf.com/Ubuntu-tips.html">使用Ubuntu的一些问题和解决办法</a></h2>
-                <div class="summary"><h1>Chromium Flash插件安装</h1>
+                <div class="summary"><h1>1 Chromium Flash插件安装</h1>
 <p>安装了Adobe Flash, 用firefox可以正常看视频, 但是用Chromium提示需要安装flash插件并给出Adobe官网链接, 选择下载后转到"Ubuntu软件中心", 提示</p>
 <blockquote>
 <p>在您当前的软件源中没有名为 “adobe-flashplugin”的软件包。</p>
 </blockquote>
-<h2>解决</h2>
+<h2>1.1 解决</h2>
 <p>参考<a href="http://www.linuxidc.com/Linux/2014-05/101095.htm">Ubuntu 14.04安装Chromium浏览器并添加Flash插件Pepper Flash Player</a>, 安装插件即可.</p>
                     <a class="btn btn-default btn-xs" href="http://gengyf.com/Ubuntu-tips.html">more ...</a>
                 </div>
@@ -160,6 +188,11 @@ GYF            </a>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://gengyf.com/section-number.html">
+                            Pelican插件: 为文章添加章节编号(section number)
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://gengyf.com/GitHub-pages-godaddy.html">
                             为Pelican+GitHub pages搭建的静态博客 添加godaddy域名
                         </a>
@@ -179,18 +212,13 @@ GYF            </a>
                             使用Ubuntu的一些问题和解决办法
                         </a>
                     </li>
-                    <li class="list-group-item">
-                        <a href="http://gengyf.com/Ubuntu-mount-NTFS.html">
-                            Ubuntu挂载动态磁盘NTFS分区失败
-                        </a>
-                    </li>
                 </ul>
             </li>
 
 
             <li class="list-group-item"><a href="http://gengyf.com/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group list-inline tagcloud" id="tags">
-                    <li class="list-group-item tag-2">
+                    <li class="list-group-item tag-1">
                         <a href="http://gengyf.com/tag/blog.html">
                             Blog
                         </a>
@@ -218,6 +246,11 @@ GYF            </a>
                     <li class="list-group-item tag-1">
                         <a href="http://gengyf.com/tag/os.html">
                             OS
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://gengyf.com/tag/pelican.html">
+                            Pelican
                         </a>
                     </li>
                     <li class="list-group-item tag-4">

@@ -119,12 +119,12 @@ GYF            </a>
 </ol>
 
 
-<h1>godaddy购买域名</h1>
+<h1>1 godaddy购买域名</h1>
 <ul>
 <li>注册 <a href="https://www.godaddy.com/">godaddy</a> 用户</li>
 <li>搜索想要的域名, 只要列出来的都是可以使用的, 下单付费即可.</li>
 </ul>
-<h1>在Pelican中配置CNAME文件</h1>
+<h1>2 在Pelican中配置CNAME文件</h1>
 <ul>
 <li>要在GitHub Pages中使用自定义域名, 需要在相关repository中添加<code>CNAME</code>文件, 文件内容为自己的域名(<code>gengyf.com</code>). 因为我们的内容使用Pelican生成的, 所以这一步需要在Pelican中配置.</li>
 <li>新建<code>content/extra</code>目录, 在其中添加上述<code>CNAME</code>文件. 在Pelican的配置文件(<code>pelicanconf.py</code>)中增加如下内容:<div class="highlight"><pre>STATIC_PATHS = [&#39;images&#39;, &#39;extra/CNAME&#39;]
@@ -134,7 +134,7 @@ EXTRA_PATH_METADATA = {&#39;extra/CNAME&#39;: {&#39;path&#39;: &#39;CNAME&#39;},
 
 </li>
 </ul>
-<h1>在godaddy配置域名</h1>
+<h1>3 在godaddy配置域名</h1>
 <ul>
 <li>登录godaddy, 在<code>Visit My Account</code>页面中点击<code>DOMAINS</code>右侧的<code>Manage</code>按钮打开自己的域名列表. 点击要修改的域名右上角的设置符号, 选择<code>Manage DNS</code>.</li>
 </ul>
@@ -143,7 +143,7 @@ EXTRA_PATH_METADATA = {&#39;extra/CNAME&#39;: {&#39;path&#39;: &#39;CNAME&#39;},
 <li>在<code>DNS ZONE FILE</code>页面点击<code>Add Record</code>, 添加两个<code>A(Host)</code>, 其中"host" = @ and "Points to" = 192.30.252.153/154</li>
 </ul>
 <p><img alt="A host" src="http://gengyf.com/images/godaddy-ahost.jpg" /></p>
-<h1>等待DNS生效</h1>
+<h1>4 等待DNS生效</h1>
 <ul>
 <li>由于全球DNS系统的缓存更新延迟, 新的域名设置可能要等一定时间才能生效.</li>
 </ul>
@@ -161,6 +161,7 @@ EXTRA_PATH_METADATA = {&#39;extra/CNAME&#39;: {&#39;path&#39;: &#39;CNAME&#39;},
     <h4>Related Posts:</h4>
     <ul>
         <li><a href="http://gengyf.com/setup-pelican-github.html">Github pages和Pelican搭建静态博客</a></li>
+        <li><a href="http://gengyf.com/section-number.html">Pelican插件: 为文章添加章节编号(section number)</a></li>
     </ul>
 </section>
     <hr/>
@@ -212,6 +213,11 @@ EXTRA_PATH_METADATA = {&#39;extra/CNAME&#39;: {&#39;path&#39;: &#39;CNAME&#39;},
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://gengyf.com/section-number.html">
+                            Pelican插件: 为文章添加章节编号(section number)
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://gengyf.com/GitHub-pages-godaddy.html">
                             为Pelican+GitHub pages搭建的静态博客 添加godaddy域名
                         </a>
@@ -231,18 +237,13 @@ EXTRA_PATH_METADATA = {&#39;extra/CNAME&#39;: {&#39;path&#39;: &#39;CNAME&#39;},
                             Mediastreamer2-2.11 windows VS2010 编译
                         </a>
                     </li>
-                    <li class="list-group-item">
-                        <a href="http://gengyf.com/intel-i-suffix.html">
-                            Intel i系列CPU后缀Y/U/M/H/Q的含义
-                        </a>
-                    </li>
                 </ul>
             </li>
 
 
             <li class="list-group-item"><a href="http://gengyf.com/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group list-inline tagcloud" id="tags">
-                    <li class="list-group-item tag-2">
+                    <li class="list-group-item tag-1">
                         <a href="http://gengyf.com/tag/blog.html">
                             Blog
                         </a>
@@ -270,6 +271,11 @@ EXTRA_PATH_METADATA = {&#39;extra/CNAME&#39;: {&#39;path&#39;: &#39;CNAME&#39;},
                     <li class="list-group-item tag-1">
                         <a href="http://gengyf.com/tag/os.html">
                             OS
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://gengyf.com/tag/pelican.html">
+                            Pelican
                         </a>
                     </li>
                     <li class="list-group-item tag-4">

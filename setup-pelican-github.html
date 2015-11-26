@@ -114,28 +114,28 @@ GYF            </a>
 <p>为了体现一个计算机渣硕的专业技能, 决定不看网上各种教程, 自己对照官方文档安装(‘▽′)/  </p>
 
 
-<h1>安装Pelican及相关软件(Windows 7)</h1>
+<h1>1 安装Pelican及相关软件(Windows 7)</h1>
 <p>为了完成目标我们需要用到一些依赖软件, 比如<code>python</code> <code>pip</code> <code>git</code> 等, 简单说下.</p>
-<h2>安装<code>python</code> <code>pip</code> <code>git</code></h2>
+<h2>1.1 安装<code>python</code> <code>pip</code> <code>git</code></h2>
 <ol>
 <li>我用的python版本是2.7.8, 在<a href="https://www.python.org/downloads/">python官网</a>下载安装即可.</li>
 <li>安装<code>pip</code>, 参考<a href="https://pip.pypa.io/en/latest/installing.html">pip quickstart</a>, windows用户需要注意在PATH系统变量中添加python安装路径下的scripts文件夹.</li>
 <li>安装<code>git</code>, 直接官网下载最新版安装</li>
 <li>安装<code>ghp-import</code>, 执行<code>pip install ghp-import</code>即可. 如果安装完在命令行中提示没有这个命令, 需要把python安装目录下的<code>/Lib/site-packages</code>目录添加到系统path中.</li>
 </ol>
-<h2>安装及初始化Pelican</h2>
+<h2>1.2 安装及初始化Pelican</h2>
 <p>参照Pelican文档中<a href="http://docs.getpelican.com/en/3.5.0/quickstart.html">quickstart</a>这一章可以快速完成Pelican的安装和初始化.</p>
-<h3>安装Pelican</h3>
+<h3>1.2.1 安装Pelican</h3>
 <p>在cmd窗口中执行<code>pip install pelican markdown</code>, 自动安装一堆之后显示"Successfully installed pelican markdown jinja2...". 注意可能由于网络问题超时失败, 重新执行命令即可.</p>
-<h1>初始化Pelican</h1>
-<h2>新建一个Pelican目录</h2>
+<h1>2 初始化Pelican</h1>
+<h2>2.1 新建一个Pelican目录</h2>
 <p>在你想要存放本地Pelican文件夹的地方新建文件夹(比如<code>Pelican</code>), 运行<code>cmd</code>进入该目录. 执行</p>
 <div class="highlight"><pre>pelican-quickstart
 </pre></div>
 
 
 <p>回答一系列问题(除了基本信息以外其他都可以直接回车用默认设置, 后面还可以改). 这样就在<code>Pelican</code>目录中建立了基本的Pelican文件框架.</p>
-<h2>写第一个Blog页面</h2>
+<h2>2.2 写第一个Blog页面</h2>
 <p>用任意文本编辑器新建一个文本文件, 内容为(举例):</p>
 <div class="highlight"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">My</span> <span class="n">First</span> <span class="n">Review</span>
 <span class="n">Date</span><span class="o">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">03</span> <span class="mi">10</span><span class="o">:</span><span class="mi">20</span>
@@ -152,14 +152,14 @@ GYF            </a>
 
 
 <p>就成功建立了第一篇博文.</p>
-<h1>发布网页到Github Pages</h1>
-<h2>新建Repository</h2>
+<h1>3 发布网页到Github Pages</h1>
+<h2>3.1 新建Repository</h2>
 <p>申请Git账号就不说了, 为了使用Github的免费个人主页功能, 我们需要新建一个名为<code>{username}.github.io</code>的Repository(注意这里{username}必须和Github用户名相同). 详情可以参考<a href="https://help.github.com/articles/user-organization-and-project-pages/">Github Help</a>, 注意两点:</p>
 <blockquote>
 <p>You must use the username.github.io naming scheme.
 Content from the master branch will be used to build and publish your GitHub Pages site.</p>
 </blockquote>
-<h2>发布网页</h2>
+<h2>3.2 发布网页</h2>
 <p>打开<code>git bash</code>命令行窗口, 切换到Pelican根目录, 执行以下命里初始化Git Repo</p>
 <div class="highlight"><pre>git init
 git commit -m <span class="s1">&#39;init&#39;</span>
@@ -174,7 +174,7 @@ ghp-import -b master -p output <span class="c">#-b master指定分支为master(�
 
 
 <p>这样就可以通过访问 <code>{username}.github.io</code> 访问博客网页了. 话说我第一次上传后等了十几分钟也没出现, 不得已把Repo删了重新上传一遍, 过了一会就有了...之前搞Octopress也是这样, 简直逼疯.</p>
-<h2>存档项目到git</h2>
+<h2>3.3 存档项目到git</h2>
 <p>为了能够在不同电脑上同步自己的Pelican, 我们顺便把整个Pelican目录同步到这个Repository里面, 只要新建一个分支就好了, 在Pelican根目录下执行</p>
 <div class="highlight"><pre>git checkout -b <span class="nb">source</span>
 git add .
@@ -183,8 +183,8 @@ git push origin <span class="nb">source</span>
 </pre></div>
 
 
-<h1>进阶功能</h1>
-<h2>安装主题</h2>
+<h1>4 进阶功能</h1>
+<h2>4.1 安装主题</h2>
 <ol>
 <li>
 <p>网上搜索到喜欢的Pelican主题之后(比如我使用的<a href="https://github.com/DandyDev/pelican-bootstrap3">bootstrap3</a>, 把主题下载到某个目录.</p>
@@ -198,7 +198,7 @@ git push origin <span class="nb">source</span>
 <p>指定Pelican使用该主题(这里要注意上一步安装完并不代表会使用这个主题), 即修改配置文件<code>pelicanconf.py</code>中的<code>THEME</code>字段(或新建该字段)指向要使用的主题<code>/path/to/bs3</code></p>
 </li>
 </ol>
-<h2>自动部署修改</h2>
+<h2>4.2 自动部署修改</h2>
 <p>我们希望博客内容改动后能用一个脚本自动把改动内容上传到Git上, 避免输入上面几条很长的git命令, 可以用以下脚本实现:</p>
 <p>上传网站</p>
 <div class="highlight"><pre><span class="nb">read</span> -p <span class="s2">&quot;input comment:&quot;</span> comment
@@ -217,7 +217,7 @@ git push origin <span class="nb">source</span>
 </pre></div>
 
 
-<h1>BUG</h1>
+<h1>5 BUG</h1>
 <ol>
 <li>
 <p>代码高亮功能, 如果是在一个列表条目下面就会失效, 比如下面这个</p>
@@ -231,6 +231,7 @@ echo "this is the code."</p>
     <h4>Related Posts:</h4>
     <ul>
         <li><a href="http://gengyf.com/GitHub-pages-godaddy.html">为Pelican+GitHub pages搭建的静态博客 添加godaddy域名</a></li>
+        <li><a href="http://gengyf.com/section-number.html">Pelican插件: 为文章添加章节编号(section number)</a></li>
     </ul>
 </section>
     <hr/>
@@ -282,6 +283,11 @@ echo "this is the code."</p>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://gengyf.com/section-number.html">
+                            Pelican插件: 为文章添加章节编号(section number)
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://gengyf.com/GitHub-pages-godaddy.html">
                             为Pelican+GitHub pages搭建的静态博客 添加godaddy域名
                         </a>
@@ -301,18 +307,13 @@ echo "this is the code."</p>
                             Mediastreamer2-2.11 windows VS2010 编译
                         </a>
                     </li>
-                    <li class="list-group-item">
-                        <a href="http://gengyf.com/intel-i-suffix.html">
-                            Intel i系列CPU后缀Y/U/M/H/Q的含义
-                        </a>
-                    </li>
                 </ul>
             </li>
 
 
             <li class="list-group-item"><a href="http://gengyf.com/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group list-inline tagcloud" id="tags">
-                    <li class="list-group-item tag-2">
+                    <li class="list-group-item tag-1">
                         <a href="http://gengyf.com/tag/blog.html">
                             Blog
                         </a>
@@ -340,6 +341,11 @@ echo "this is the code."</p>
                     <li class="list-group-item tag-1">
                         <a href="http://gengyf.com/tag/os.html">
                             OS
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://gengyf.com/tag/pelican.html">
+                            Pelican
                         </a>
                     </li>
                     <li class="list-group-item tag-4">

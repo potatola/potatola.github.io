@@ -112,7 +112,7 @@ GYF            </a>
                 <p>之前一直在用Linphone软件下的开源库Mediastreamer2-2.8版本做实时视频传输中码率自适应的实验, 在底层oRTP库里面实现了一些自己的算法, 虽说问题不少, 也还算取得了一点成果. 最近准备在FEC冗余保护方面做一些系统实现, 依然选择在Mediastreamer2上做. 不过考虑到社区一直对Linphone进行更新, 可能已经做了很多改进和修复, 所以决定下载最新版本的Mediastreamer2进行实验. 没想到光是编译就用了好几天时间, 自己对Windows程序的编译/链接等过程确实没太多了解, 主要用了低效率的暴力尝试法(瞎试), 这里简单记录下过程.</p>
 
 
-<h2>环境准备</h2>
+<h2>1 环境准备</h2>
 <p>首先当然是在Linphone官网 <a href="http://www.linphone.org/technical-corner/mediastreamer2/downloads">下载页面</a> clone代码, 下载Mediastreamer2后, 还要根据<code>README</code>里的指示下载好<code>oRTP</code>模块和<code>linphone-deps</code>部分. README中windows相关说明如下:</p>
 <blockquote>
 <ul>
@@ -126,11 +126,11 @@ GYF            </a>
 </ul>
 </blockquote>
 <p>注意直接按照里面的要求做完之后还会有很多问题, 下面一一解决.</p>
-<h2>编译问题及解决</h2>
+<h2>2 编译问题及解决</h2>
 <p>整个解决方案包含三个项目, 分别是<code>mediastreamer</code>, <code>mediastreamer2</code>和<code>oRTP</code>, 这时候直接启动调试会发现一堆编译错误.</p>
-<h3>启动项设置</h3>
+<h3>2.1 启动项设置</h3>
 <p>我们的目标是生成Mediastreamer2.exe用于视频传输的测试, 打开sln之后启动项目是mediastreamer2库项目, 需要把mediastreamer设为启动项目.(右键-&gt;设为启动项目)</p>
-<h3>oRTP问题: 缺失文件</h3>
+<h3>2.2 oRTP问题: 缺失文件</h3>
 <p>oRTP生成过程主要报错</p>
 <blockquote>
 <p>fatal error C1083: 无法打开源文件:“....\src\zrtp.c”: No such file or directory</p>
@@ -141,7 +141,7 @@ GYF            </a>
 <p>fatal error C1083: 无法打开包括文件:“inttypes.h”: No such file or directory</p>
 </blockquote>
 <p>搜一下发现<code>ortp\include\MSVC</code>目录下面有此文件, 而oRTP项目的附加包含目录里没有这个目录, 添加之. (右键-&gt;属性-&gt;C/C++-&gt;附加包含目录)</p>
-<h3>mediastreamer2问题: 缺失文件</h3>
+<h3>2.3 mediastreamer2问题: 缺失文件</h3>
 <blockquote>
 <p>error C2065: “HAVE_NON_FREE_CODECS”: 未声明的标识符</p>
 </blockquote>
@@ -155,7 +155,7 @@ GYF            </a>
 <p>fatal error C1083: 无法打开源文件:“....\src\audiofilters\msconf.c”: No such file or directory</p>
 </blockquote>
 <p>好像没有用到这个文件, 直接从项目索引里移除.</p>
-<h3>mediastreamer2问题: 无法解析的外部符号</h3>
+<h3>2.4 mediastreamer2问题: 无法解析的外部符号</h3>
 <p>上述问题解决之后, 就会出来五十多个 <code>error LNK2019: 无法解析的外部符号</code>的问题. 这个问题的原因是项目生成lib文件的时候声明了这些函数, 但是没有把他们的实现文件(.c文件)加入到文件索引里.
 我的方法是用<code>grepWin</code>软件在mediastreamer2文件夹内查找到对应函数的实现, 然后在mediastreamer2项目中添加这个文件(右键-&gt;添加-&gt;现有项...)</p>
 <p>注意类似下面的几条日志需要特殊处理:</p>
@@ -168,9 +168,9 @@ GYF            </a>
     2&gt;msvoip.obj : error LNK2001: 无法解析的外部符号 _ms_conf_desc</p>
 </blockquote>
 <p>是因为定义它们的文件<code>videoenc.c</code>中, 相关代码被<code>#ifdef</code>部分屏蔽掉了. 我感觉这几个函数应该没用到, 直接在<code>viopdescs.h</code>文件里把相关声明删除了.</p>
-<h3>mediastreamer问题: 缺失文件</h3>
+<h3>2.5 mediastreamer问题: 缺失文件</h3>
 <p>少了<code>common.h</code>等文件, 解决方法同上.</p>
-<h2>运行</h2>
+<h2>3 运行</h2>
 <p>上述问题都解决之后就可以运行程序了, 注意运行的时候需要添加一些命令行参数, 否则窗口就直接关闭了. 如果想直接用调试模式运行程序, 测试功能, 可以在项目设置里添加参数, (右键-&gt;属性-&gt;调试-&gt;命令参数)
 比如参数 <code>--local 5000 --remote 127.0.0.1:5000 --payload 103</code></p>
             </div>
@@ -224,6 +224,11 @@ GYF            </a>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://gengyf.com/section-number.html">
+                            Pelican插件: 为文章添加章节编号(section number)
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://gengyf.com/GitHub-pages-godaddy.html">
                             为Pelican+GitHub pages搭建的静态博客 添加godaddy域名
                         </a>
@@ -243,18 +248,13 @@ GYF            </a>
                             Mediastreamer2-2.11 windows VS2010 编译
                         </a>
                     </li>
-                    <li class="list-group-item">
-                        <a href="http://gengyf.com/intel-i-suffix.html">
-                            Intel i系列CPU后缀Y/U/M/H/Q的含义
-                        </a>
-                    </li>
                 </ul>
             </li>
 
 
             <li class="list-group-item"><a href="http://gengyf.com/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group list-inline tagcloud" id="tags">
-                    <li class="list-group-item tag-2">
+                    <li class="list-group-item tag-1">
                         <a href="http://gengyf.com/tag/blog.html">
                             Blog
                         </a>
@@ -282,6 +282,11 @@ GYF            </a>
                     <li class="list-group-item tag-1">
                         <a href="http://gengyf.com/tag/os.html">
                             OS
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://gengyf.com/tag/pelican.html">
+                            Pelican
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
