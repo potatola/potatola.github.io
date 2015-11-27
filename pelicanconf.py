@@ -30,7 +30,7 @@ GOOGLE_ANALYTICS = 'UA-70409451-1'
 
 # plugin config
 PLUGIN_PATHS = [u'./pelican-plugins']
-PLUGINS = [u'sitemap', u'summary', u'related_posts', u'tag_cloud']
+PLUGINS = [u'sitemap', u'summary', u'related_posts', u'tag_cloud', u'section_number']
 
 # sitemap plugin config
 SITEMAP = {
