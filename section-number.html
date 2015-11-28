@@ -14,13 +14,13 @@
 
         <meta name="author" content="Geng Yufeng" />
         <meta name="keywords" content="Blog,Pelican" />
-        <meta name="description" content="1 Section number 插件根据文章章节标题(h1/h2等), 为所有文章添加章节编号. 可以在设置文件中增加变量SECTION_NUMBER_MAX来设置最大编号层数, 默认SECTION_NUMBER_MAX = 3. 2 注意 插件默认第一次出现的标题作为最顶层章节, 例如第一次出现h2, 则h2作为顶层章节开始编号." />
+        <meta name="description" content="插件名: &#39;section number&#39; 对于Pelican生成的静态博客, 根据其章节层级(默认包括&lt;h1&gt; - &lt;h6&gt;六种不同层级的章节标题), 为标题添加章节编号, 格式为X.X.X 标题. 可以在设置文件中增加变量SECTION_NUMBER_MAX来设置最大编号层数, 默认SECTION_NUMBER_MAX = 3. 插件已经添加到 Pelican &#34;官方&#34;插件库中, 访问地址为 getpelican/pelican-plugins." />
 
         <meta property="og:site_name" content="GYF" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Pelican插件: 为文章添加章节编号(section number)"/>
         <meta property="og:url" content="http://gengyf.com/section-number.html"/>
-        <meta property="og:description" content="1 Section number 插件根据文章章节标题(h1/h2等), 为所有文章添加章节编号. 可以在设置文件中增加变量SECTION_NUMBER_MAX来设置最大编号层数, 默认SECTION_NUMBER_MAX = 3. 2 注意 插件默认第一次出现的标题作为最顶层章节, 例如第一次出现h2, 则h2作为顶层章节开始编号."/>
+        <meta property="og:description" content="插件名: &#39;section number&#39; 对于Pelican生成的静态博客, 根据其章节层级(默认包括&lt;h1&gt; - &lt;h6&gt;六种不同层级的章节标题), 为标题添加章节编号, 格式为X.X.X 标题. 可以在设置文件中增加变量SECTION_NUMBER_MAX来设置最大编号层数, 默认SECTION_NUMBER_MAX = 3. 插件已经添加到 Pelican &#34;官方&#34;插件库中, 访问地址为 getpelican/pelican-plugins."/>
         <meta property="article:published_time" content="2015-11-26" />
             <meta property="article:section" content="Tools" />
             <meta property="article:tag" content="Blog" />
@@ -109,13 +109,37 @@ GYF            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h1>1 Section number</h1>
-<p>插件根据文章章节标题(<code>h1</code>/<code>h2</code>等), 为所有文章添加章节编号.</p>
+                <p>插件名: 'section number'</p>
+<p>对于Pelican生成的静态博客, 根据其章节层级(默认包括<code>&lt;h1&gt; - &lt;h6&gt;</code>六种不同层级的章节标题), 为标题添加章节编号, 格式为<code>X.X.X 标题</code>.</p>
 <p>可以在设置文件中增加变量<code>SECTION_NUMBER_MAX</code>来设置最大编号层数, 默认<code>SECTION_NUMBER_MAX = 3</code>.</p>
+<p>插件已经添加到 Pelican "官方"插件库中, 访问地址为 <a href="https://github.com/getpelican/pelican-plugins">getpelican/pelican-plugins</a>.</p>
+
+
+<h1>1 例</h1>
+<div class="highlight"><pre># section
+blabla
+## subsection
+blabla
+## subsection
+blabla
+# section
+blabla
+</pre></div>
+
+
+<p>在文章中效果为</p>
+<blockquote>
+<p>1 section</p>
+<p>blabla</p>
+<p>1.1 subsection</p>
+<p>blabla</p>
+<p>1.2 subsection</p>
+<p>blabla</p>
+<p>2 section</p>
+<p>blabla</p>
+</blockquote>
 <h1>2 注意</h1>
 <p>插件默认第一次出现的标题作为最顶层章节, 例如第一次出现<code>h2</code>, 则<code>h2</code>作为顶层章节开始编号.</p>
-
-
 <h1>3 以下是测试样例</h1>
 <h2>3.1 二级标题</h2>
 <p>段落内容</p>
@@ -138,8 +162,8 @@ GYF            </a>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="http://gengyf.com/GitHub-pages-godaddy.html">为Pelican+GitHub pages搭建的静态博客 添加godaddy域名</a></li>
         <li><a href="http://gengyf.com/setup-pelican-github.html">Github pages和Pelican搭建静态博客</a></li>
+        <li><a href="http://gengyf.com/GitHub-pages-godaddy.html">为Pelican+GitHub pages搭建的静态博客 添加godaddy域名</a></li>
     </ul>
 </section>
     <hr/>
