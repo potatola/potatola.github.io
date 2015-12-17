@@ -73,6 +73,21 @@ GYF            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="http://gengyf.com/bjmemc-crawler.html">爬取加密的silverlight网站数据</a></h2>
+                <div class="summary"><p>很久之前帮妹子写了个小脚本爬"<a href="http://zx.bjmemc.com.cn/">北京空气质量</a>"网站上的空气数据. 当时用wireshark抓包分析请求和返回数据格式, 用python发个post很容易就把数据爬下来了. 但是用了一阵子突然全都变成了乱码, 发现网站数据居然加密了, 对这方面实在不了解只好作罢, 苦了妹子和实验室同学天天手抄数据(还好当时只需要一天记录一次).</p>
+<p>最近那边老师要每小时数据了, 这个实在没办法手抄, 于是咬咬牙各种百度google, 再次解决了数据加密问题, 又可以愉快地爬数据了. 最关键是搜到一位大神已经破解了该网站的加密解密密钥(<a href="http://blog.csdn.net/kangrydotnet/article/details/43987835">c#爬取Silverlight网页</a>), 才让我能够完成这个原本不可能的任务. 主要步骤包括:</p>
+<ol>
+<li>发送post请求, 获取数据(加密); 以及解密后整理数据, 保存为csv文件</li>
+<li>由于直接获取的数据经过了加密, 需要反汇编silverlight源代码获取密钥, 解密数据</li>
+<li>设置windows计划任务, 每小时重复执行</li>
+</ol>
+<p>网站加密之前用python实现了第一步, 每天运行一下就可以拿到当天数据. 由于网站加密以及定时执行的需求, 又增加了另外的步骤.</p>
+
+                    <a class="btn btn-default btn-xs" href="http://gengyf.com/bjmemc-crawler.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://gengyf.com/section-number.html">Pelican插件: 为文章添加章节编号(section number)</a></h2>
                 <div class="summary"><p>插件名: 'section number'</p>
 <p>对于Pelican生成的静态博客, 根据其章节层级(默认包括<code>&lt;h1&gt; - &lt;h6&gt;</code>六种不同层级的章节标题), 为标题添加章节编号, 格式为<code>X.X.X 标题</code>.</p>
@@ -160,6 +175,11 @@ GYF            </a>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://gengyf.com/bjmemc-crawler.html">
+                            爬取加密的silverlight网站数据
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://gengyf.com/section-number.html">
                             Pelican插件: 为文章添加章节编号(section number)
                         </a>
@@ -179,11 +199,6 @@ GYF            </a>
                             CV template of a programmer graduate
                         </a>
                     </li>
-                    <li class="list-group-item">
-                        <a href="http://gengyf.com/Ubuntu-tips.html">
-                            使用Ubuntu的一些问题和解决办法
-                        </a>
-                    </li>
                 </ul>
             </li>
 
@@ -198,6 +213,11 @@ GYF            </a>
                     <li class="list-group-item tag-4">
                         <a href="http://gengyf.com/tag/coding.html">
                             Coding
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://gengyf.com/tag/crawler.html">
+                            crawler
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
