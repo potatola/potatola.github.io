@@ -51,7 +51,14 @@ oRTP生成过程主要报错
 >	error C2054: 在“inline”之后应输入“(”
 	error C2085: “payload_header_set”: 不在形参表中
 
-参考 http://blog.csdn.net/wl_fln/article/details/8672782 解决.
+在错误位置之前加入
+
+	:::c++
+	#if defined(WIN32) && !defined(__cplusplus)
+	#define inline __inline
+	#endif
+
+参考 http://blog.csdn.net/wl_fln/article/details/8672782
 
 >	fatal error C1083: 无法打开源文件:“..\..\src\audiofilters\msconf.c”: No such file or directory
 
@@ -60,7 +67,23 @@ oRTP生成过程主要报错
 ### mediastreamer2问题: 无法解析的外部符号
 
 上述问题解决之后, 就会出来五十多个 `error LNK2019: 无法解析的外部符号`的问题. 这个问题的原因是项目生成lib文件的时候声明了这些函数, 但是没有把他们的实现文件(.c文件)加入到文件索引里.
-我的方法是用`grepWin`软件在mediastreamer2文件夹内查找到对应函数的实现, 然后在mediastreamer2项目中添加这个文件(右键->添加->现有项...)
+我的方法是用`grepWin`软件在mediastreamer2文件夹内查找到对应函数的实现, 然后在mediastreamer2项目中添加这个文件(右键->添加->现有项...), 涉及到的文件包括：
+
+	mediastreamer2:
+	mediastreamer2\include\mediastreamer2\msfactory.c
+	mediastreamer2\src\crypto\{all}
+	mediastreamer2\src\utils\stream_regulator.c
+	mediastreamer2\src\voip\stun.c
+	mediastreamer2\src\voip\rfc4103_textstream.c
+	mediastreamer2\src\videofilters\videoenc.c
+	mediastreamer2\src\voip\video_preset_high_fps.c
+	mediastreamer2\src\base\msvideopresets.c
+	mediastreamer2\src\voip\stun_udp.c
+	ortp:
+	ortp\src\extremum.c
+	mediastreamer:
+	mediastreamer2\tools\common.c
+
 
 注意类似下面的几条日志需要特殊处理:
 
