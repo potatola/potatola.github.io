@@ -150,14 +150,38 @@ GYF            </a>
 <p>error C2054: 在“inline”之后应输入“(”
     error C2085: “payload_header_set”: 不在形参表中</p>
 </blockquote>
-<p>参考 http://blog.csdn.net/wl_fln/article/details/8672782 解决.</p>
+<p>在错误位置之前加入</p>
+<div class="highlight"><pre><span class="cp">#if defined(WIN32) &amp;&amp; !defined(__cplusplus)</span>
+<span class="cp">#define inline __inline</span>
+<span class="cp">#endif</span>
+</pre></div>
+
+
+<p>参考 http://blog.csdn.net/wl_fln/article/details/8672782</p>
 <blockquote>
 <p>fatal error C1083: 无法打开源文件:“....\src\audiofilters\msconf.c”: No such file or directory</p>
 </blockquote>
 <p>好像没有用到这个文件, 直接从项目索引里移除.</p>
 <h3>2.4 mediastreamer2问题: 无法解析的外部符号</h3>
 <p>上述问题解决之后, 就会出来五十多个 <code>error LNK2019: 无法解析的外部符号</code>的问题. 这个问题的原因是项目生成lib文件的时候声明了这些函数, 但是没有把他们的实现文件(.c文件)加入到文件索引里.
-我的方法是用<code>grepWin</code>软件在mediastreamer2文件夹内查找到对应函数的实现, 然后在mediastreamer2项目中添加这个文件(右键-&gt;添加-&gt;现有项...)</p>
+我的方法是用<code>grepWin</code>软件在mediastreamer2文件夹内查找到对应函数的实现, 然后在mediastreamer2项目中添加这个文件(右键-&gt;添加-&gt;现有项...), 涉及到的文件包括：</p>
+<div class="highlight"><pre><span class="n">mediastreamer2</span><span class="o">:</span>
+<span class="n">mediastreamer2</span><span class="o">\</span><span class="k">include</span><span class="o">\</span><span class="n">mediastreamer2</span><span class="o">\</span><span class="n">msfactory</span><span class="o">.</span><span class="na">c</span>
+<span class="n">mediastreamer2</span><span class="o">\</span><span class="n">src</span><span class="o">\</span><span class="n">crypto</span><span class="o">\{</span><span class="n">all</span><span class="o">}</span>
+<span class="n">mediastreamer2</span><span class="o">\</span><span class="n">src</span><span class="o">\</span><span class="n">utils</span><span class="o">\</span><span class="n">stream_regulator</span><span class="o">.</span><span class="na">c</span>
+<span class="n">mediastreamer2</span><span class="o">\</span><span class="n">src</span><span class="o">\</span><span class="n">voip</span><span class="o">\</span><span class="n">stun</span><span class="o">.</span><span class="na">c</span>
+<span class="n">mediastreamer2</span><span class="o">\</span><span class="n">src</span><span class="o">\</span><span class="n">voip</span><span class="o">\</span><span class="n">rfc4103_textstream</span><span class="o">.</span><span class="na">c</span>
+<span class="n">mediastreamer2</span><span class="o">\</span><span class="n">src</span><span class="o">\</span><span class="n">videofilters</span><span class="o">\</span><span class="n">videoenc</span><span class="o">.</span><span class="na">c</span>
+<span class="n">mediastreamer2</span><span class="o">\</span><span class="n">src</span><span class="o">\</span><span class="n">voip</span><span class="o">\</span><span class="n">video_preset_high_fps</span><span class="o">.</span><span class="na">c</span>
+<span class="n">mediastreamer2</span><span class="o">\</span><span class="n">src</span><span class="o">\</span><span class="n">base</span><span class="o">\</span><span class="n">msvideopresets</span><span class="o">.</span><span class="na">c</span>
+<span class="n">mediastreamer2</span><span class="o">\</span><span class="n">src</span><span class="o">\</span><span class="n">voip</span><span class="o">\</span><span class="n">stun_udp</span><span class="o">.</span><span class="na">c</span>
+<span class="n">ortp</span><span class="o">:</span>
+<span class="n">ortp</span><span class="o">\</span><span class="n">src</span><span class="o">\</span><span class="n">extremum</span><span class="o">.</span><span class="na">c</span>
+<span class="n">mediastreamer</span><span class="o">:</span>
+<span class="n">mediastreamer2</span><span class="o">\</span><span class="n">tools</span><span class="o">\</span><span class="n">common</span><span class="o">.</span><span class="na">c</span>
+</pre></div>
+
+
 <p>注意类似下面的几条日志需要特殊处理:</p>
 <blockquote>
 <p>msvolume.obj : error LNK2019: 无法解析的外部符号 __imp__ortp_extremum_init，该符号在函数 _volume_init 中被引用</p>

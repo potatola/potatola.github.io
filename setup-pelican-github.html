@@ -168,8 +168,8 @@ git remote add origin git@github.com:<span class="o">{</span>username<span class
 
 
 <p>利用<code>ghp-import</code>工具发布网页</p>
-<div class="highlight"><pre>git branch gh-pages <span class="c">#只有第一次需要执行</span>
-ghp-import -b master -p output <span class="c">#-b master指定分支为master(用于personal page), -p直接尝试push</span>
+<div class="highlight"><pre>git branch gh-pages <span class="c1">#只有第一次需要执行</span>
+ghp-import -b master -p output <span class="c1">#-b master指定分支为master(用于personal page), -p直接尝试push</span>
 </pre></div>
 
 
@@ -203,15 +203,15 @@ git push origin <span class="nb">source</span>
 <p>上传网站</p>
 <div class="highlight"><pre><span class="nb">read</span> -p <span class="s2">&quot;input comment:&quot;</span> comment
 pelican content -s pelicanconf.py
-ghp-import -b master -m <span class="s2">&quot;</span><span class="nv">$comment</span><span class="s2">&quot;</span> output
-git push origin master:master -f <span class="c">#-f: force push</span>
+ghp-import -b master -m <span class="s2">&quot;</span><span class="nv">$c</span><span class="s2">omment&quot;</span> output
+git push origin master:master -f <span class="c1">#-f: force push</span>
 </pre></div>
 
 
 <p>同步源代码</p>
 <div class="highlight"><pre><span class="nb">read</span> -p <span class="s2">&quot;input comment:&quot;</span> comment
 git add -A .
-git commit -m <span class="s2">&quot;</span><span class="nv">$comment</span><span class="s2">&quot;</span>
+git commit -m <span class="s2">&quot;</span><span class="nv">$c</span><span class="s2">omment&quot;</span>
 git pull
 git push origin <span class="nb">source</span>
 </pre></div>
