@@ -168,8 +168,8 @@ git remote add origin git@github.com:<span class="o">{</span>username<span class
 
 
 <p>利用<code>ghp-import</code>工具发布网页</p>
-<div class="highlight"><pre>git branch gh-pages <span class="c1">#只有第一次需要执行</span>
-ghp-import -b master -p output <span class="c1">#-b master指定分支为master(用于personal page), -p直接尝试push</span>
+<div class="highlight"><pre>git branch gh-pages <span class="c">#只有第一次需要执行</span>
+ghp-import -b master -p output <span class="c">#-b master指定分支为master(用于personal page), -p直接尝试push</span>
 </pre></div>
 
 
@@ -203,15 +203,15 @@ git push origin <span class="nb">source</span>
 <p>上传网站</p>
 <div class="highlight"><pre><span class="nb">read</span> -p <span class="s2">&quot;input comment:&quot;</span> comment
 pelican content -s pelicanconf.py
-ghp-import -b master -m <span class="s2">&quot;</span><span class="nv">$c</span><span class="s2">omment&quot;</span> output
-git push origin master:master -f <span class="c1">#-f: force push</span>
+ghp-import -b master -m <span class="s2">&quot;</span><span class="nv">$comment</span><span class="s2">&quot;</span> output
+git push origin master:master -f <span class="c">#-f: force push</span>
 </pre></div>
 
 
 <p>同步源代码</p>
 <div class="highlight"><pre><span class="nb">read</span> -p <span class="s2">&quot;input comment:&quot;</span> comment
 git add -A .
-git commit -m <span class="s2">&quot;</span><span class="nv">$c</span><span class="s2">omment&quot;</span>
+git commit -m <span class="s2">&quot;</span><span class="nv">$comment</span><span class="s2">&quot;</span>
 git pull
 git push origin <span class="nb">source</span>
 </pre></div>
@@ -283,6 +283,11 @@ echo "this is the code."</p>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://gengyf.com/military-training-life.html">
+                            大一军训日记
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://gengyf.com/bjmemc-crawler.html">
                             爬取加密的silverlight网站数据
                         </a>
@@ -300,11 +305,6 @@ echo "this is the code."</p>
                     <li class="list-group-item">
                         <a href="http://gengyf.com/mac-virtualbox-conf.html">
                             Mac使用virtualbox: 分辨率调整, command快捷键映射control
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://gengyf.com/cv-template.html">
-                            CV template of a programmer graduate
                         </a>
                     </li>
                 </ul>
@@ -343,6 +343,11 @@ echo "this is the code."</p>
                             Goods
                         </a>
                     </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://gengyf.com/tag/life.html">
+                            Life
+                        </a>
+                    </li>
                     <li class="list-group-item tag-2">
                         <a href="http://gengyf.com/tag/os.html">
                             OS
@@ -372,7 +377,7 @@ echo "this is the code."</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2015 Geng Yufeng
+         <div class="col-xs-10">&copy; 2016 Geng Yufeng
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
