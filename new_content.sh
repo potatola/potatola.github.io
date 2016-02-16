@@ -19,5 +19,7 @@ read -p "tags:(tag1[,tags]):" tags
 echo "Title: $title 
 Date: "`date +'%F %T'`"
 Tags: $tags
-Slug: ${name%.md}" > "content/$category/$name"
+Slug: ${name%.md}
+
+<!-- PELICAN_END_SUMMARY -->" > "content/$category/$name"
 
